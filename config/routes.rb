@@ -1,5 +1,6 @@
 Oncampuschef::Application.routes.draw do
-  #get "static_pages/home"
+
+  get "static_pages/home"
   get "static_pages/menu"
   get "static_pages/pricing"
   get "static_pages/order"
