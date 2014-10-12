@@ -1,4 +1,13 @@
 Oncampuschef::Application.routes.draw do
+  #get "static_pages/home"
+  get "static_pages/menu"
+  get "static_pages/pricing"
+  get "static_pages/order"
+  get "static_pages/promotions"
+  get "static_pages/faq"
+  get "static_pages/about"
+
+  root 'static_pages#home'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
