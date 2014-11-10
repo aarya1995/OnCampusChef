@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.8'
-
+gem 'devise'
 # Use sqlite3 as the database for Active Record
 group :development, :test do
 	gem 'sqlite3'
@@ -13,6 +13,14 @@ group :test do
 	gem 'selenium-webdriver', '2.35.1'
 	gem 'capybara', '2.1.0'
 end
+
+group :assets do
+	gem 'twitter-bootstrap-rails'
+end
+
+#high_voltage gem for integrating the sexy front end code
+gem 'high_voltage', '~> 2.2.1'
+
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
@@ -28,6 +36,12 @@ gem 'coffee-rails', '~> 4.0.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+
+#add gems needed for bootstrap themes here
+gem 'jquery-ui-rails'
+gem 'therubyracer'
+gem "font-awesome-rails"
+
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
