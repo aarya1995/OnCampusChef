@@ -1,0 +1,102 @@
+
+@mixin box_sizing {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box
+}
+
+#error_explanation {
+	color: #f00;
+	ul {
+		list-style: none;
+		margin: 0 0 18px 0;
+	}
+}
+
+
+.margin {
+
+	margin-bottom: 20px;
+}
+
+
+
+#chefName {
+
+	margin-left: 80px;
+}
+
+.portfolio-item-food {
+
+	margin-bottom: 25px;
+	color:rgb(240,240,240);
+
+}
+
+.food {
+	margin:auto;
+	width:60%;
+}
+
+
+.chef-description {
+    display: table;
+}
+
+[class*="chef-col"] {
+    float: none;
+    display: table-cell;
+    vertical-align: top;
+}
+
+
+.chef-bio {
+	vertical-align:middle;
+}
+
+.chef {
+
+	margin-left: -5%;
+}
+
+.chef-container {
+	margin-bottom: 0;
+	background:linear-gradient(#000033,#181818);
+	color:rgba(204,153,0,.9);
+}
+
+
+.food-container {
+	/*
+	margin-top: 40px; */
+	width: 100%; 
+	position:absolute;
+	background-image:URL("/assets/menu-bg.jpg");
+
+}
+
+.food-top{
+	margin-top:40px;
+}
+
+.navigation {
+	margin-bottom: 0px;
+}
+
+.home-link {
+	color:white;
+	font-weight:bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

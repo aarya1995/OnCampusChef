@@ -1,0 +1,44 @@
+<% provide(:title, 'Sign up') %>
+
+<h1 id = "formHeader">Sign up</h1>
+</br>
+</br>
+
+<div id = "signup">
+<div class="row">
+	<div class="span6 offset3">
+		<%= form_for(@user) do |f| %>
+			<%= render 'shared/error_messages', object: f.object %>
+		
+			<%= f.label :name %>
+		</br>
+			<%= f.text_field :name %>
+		</br>
+		</br>
+
+			<%= f.label :email %>
+		</br>
+			<%= f.text_field :email %>
+		</br>
+		</br>
+			<%= f.label :phonenumber %>
+		</br>
+			<%= f.text_field :phonenumber %>
+		</br>
+		</br>
+			<%= f.label :address %>
+		</br>
+			<%= f.text_field :address %>
+		</br>
+		</br>
+			<%= f.label :mealplan %>
+		</br>
+			<%= f.select(:mealplan, options_for_select([['Classic Living Meal Plan', 'Classic Living Meal Plan'], ['AsianFusion Meal Plan', 'AsianFusion Meal Plan'], ['South Asian Cuisine Meal Plan', 'South Asian Cuisine Meal Plan'], ['Chinese and Korean Mix Meal Plan', 'Chinese and Korean Mix Meal Plan'], ['American Delight', 'American Delight'], ['AsianFusion Meal Plan', 'AsianFusion Meal Plan'], ['EatSmart Meal Plan', 'EatSmart Meal Plan'], ['Specialty Sandwiches and Burgers', 'Specialty Sandwiches and Burgers'], ['Body Building Plan', 'Body Building Plan']]), { include_blank: true }, class: "btn btn-default dropdown-toggle" ) %>
+		</br>
+		</br>
+		</br>
+			<%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
+		<% end %>
+	</div>
+</div>
+</div>

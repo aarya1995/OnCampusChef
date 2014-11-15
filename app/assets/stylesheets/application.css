@@ -11,3 +11,15 @@
  *= require_self
  *= require_tree .
  */
+
+ #signup {
+ 	margin: auto;
+ 	width: 60%;
+ 	height: 60%;
+ 	
+ }
+
+#formHeader {
+	text-align: center;
+}
+

@@ -18,6 +18,8 @@ group :assets do
 	gem 'twitter-bootstrap-rails'
 end
 
+gem 'simple_form'
+
 #high_voltage gem for integrating the sexy front end code
 gem 'high_voltage', '~> 2.2.1'
 
