@@ -62,7 +62,7 @@
 .chef-container {
 	margin-bottom: 0;
 	background:linear-gradient(#000033,#181818);
-	color:rgba(204,153,0,.9);
+	color:rgba(240,240,154,.9);
 }
 
 
@@ -70,7 +70,7 @@
 	/*
 	margin-top: 40px; */
 	width: 100%; 
-	position:absolute;
+	/*position:absolute;*/
 	background-image:URL("/assets/menu-bg.jpg");
 
 }
@@ -88,15 +88,83 @@
 	font-weight:bold;
 }
 
+.order-button {
+	margin-bottom:30px;
+}
+
+.menu-footer {
+	background: #333;
+	color: #eee;
+	font-size: 11px;
+	padding: 20px;
+}
+
+ul.unstyled {
+	list-style: none;
+	padding: 0;
+}
+
+.chef-profile {
+    display: table;
+    margin-bottom: 80px;
+}
+
+[class*="chef-profile-col"] {
+    float: none;
+    display: table-cell;
+    vertical-align: top;
+}
 
 
+.chef-hook {
+	
+  	margin-top: 10%;
+   
+}
 
+.chef-index {
 
+	width: 100%; 
+	
+	background-image:URL("/assets/menu-bg.jpg");
 
+	color: white;
 
+}
 
+.chef-img {
 
+	margin-left: 8%;
+}
 
+#small-text {
+	color: white;
+}
 
+.modal-bg {
+	background-image:URL("/assets/gray-bg.jpg");
+	color: white;
+}
 
+.food-right {
+	margin-left: 60%;
+}
+
+.food-left {
+	margin-right: 60%
+}
+
+.showcase img{
+	height: 200px;
+    width: 200px;
+}
+
+.top-row {
+	margin-bottom: 25px;
+}
+
+.layer {
+	background-color: rgba(0, 0, 0, 0.3);
+    
+}
 

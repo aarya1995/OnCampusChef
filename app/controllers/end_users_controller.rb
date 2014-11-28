@@ -1,16 +1,25 @@
 class EndUsersController < ApplicationController
 
-	def new
+	def menu1
 		@user = EndUser.new
 	end
 
 	def create
 		@user = EndUser.new(user_params)
-		if @user.save
-			redirect_to '/testudo'
-		else 
-			render 'new'
-		end
+
+		respond_to do |format|
+	      if @user.save
+	        format.html { redirect_to @user, notice: 'Person was successfully created.' }
+	        
+	        # added:
+	        format.js   { render action: 'show', status: :created, location: @user }
+	      else
+	        format.html { render action: 'new' }
+	        
+	        # added:
+	        format.js   { render json: @user.errors, status: :unprocessable_entity }
+	      end
+    	end
 	end
 
 	private

@@ -6,18 +6,31 @@
 
 /* Global Styles */
 
+ @font-face {
+        font-family: "Scriptorama Hostess JF";
+        src: url(/assets/Scriptorama Hostess JF.ttf) format("truetype");
+    }
+
+#special-font {
+
+    font-family: "Scriptorama Hostess JF";
+    font-size: 8em;
+    
+
+}
+
+#slogan {
+    font-family: "Scriptorama Hostess JF";
+    font-size: 3em;
+    
+}
+
 html,
 body {
     width: 100%;
     height: 100%;
 }
 
-/* Declaring fonts 
-@font-face {
-    font-family: "Kaushan Script Regular";
-    src: url(/assets/KaushanScript-Regular.otf) format("truetype");
-}
-*/
 
 body {
     font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -180,12 +193,22 @@ hr.small {
 
 .about {
     padding: 50px 0;
+    background-color: #FCFCFC;
 }
 
 /* Services */
 
 .services {
+    color: white;
+    background-color: #333333;
     padding: 50px 0;
+
+}
+
+.call-to-action-banner {
+    color: white;
+    background-color: #333333;
+    
 
 }
 
@@ -201,7 +224,7 @@ hr.small {
     width: 100%;
     height: 400px;
     color: #fff;
-    background: url("running.jpeg") no-repeat center center scroll;
+    background: url("running2.jpg") no-repeat center center scroll;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -212,6 +235,7 @@ hr.small {
 
 .portfolio {
     padding: 50px 0;
+    background-color: #FCFCFC;
 }
 
 .portfolio-item {
@@ -220,8 +244,8 @@ hr.small {
 
 .img-portfolio {
     margin: 0 auto;
-    height: 200px;
-    width: 200px;
+    height: 350px;
+    width: 350px;
 }
 
 .img-portfolio:hover {
@@ -254,4 +278,5 @@ hr.small {
 
 footer {
     padding: 100px 0;
+    background-color: #FCFCFC;
 }

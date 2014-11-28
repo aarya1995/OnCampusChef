@@ -9,10 +9,10 @@ Oncampuschef::Application.routes.draw do
   get "static_pages/faq"
   get "static_pages/about"
   get "static_pages/chefs"
-  get "static_pages/menu1"
   resources :end_users
 
-  match '/signup', to: 'end_users#new', via: 'get'
+  match '/signup', to: 'end_users#menu1', via: 'get'
+  match '/chefs', to: 'static_pages#chefs', via: 'get'
 
   get 'pages/index' => 'high_voltage/pages#show', id: 'index'
   # The priority is based upon order of creation: first created -> highest priority.

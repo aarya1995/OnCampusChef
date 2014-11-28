@@ -1,27 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>OnCampusChef</title>
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-</head>
-
-<body>
+<% provide(:title, 'Home') %>
 
     <!-- Navigation -->
+
+      <div class = "navbar navbar-inverse navbar-fixed-top navigation" id="stickyheader">
+        <div class = "container">
+            <div class = "navbar-header">
+                <a href= "top" class = "navbar-brand home-link">OnCampusChef</a>
+
+                <button class = "navbar-toggle" data-toggle = "collapse" data-target = ".navHeaderCollapse">
+                    <span class = "icon-bar"></span>
+                    <span class = "icon-bar"></span>
+                    <span class = "icon-bar"></span>
+                </button>
+            </div>
+            <div class = "collapse navbar-collapse navHeaderCollapse">
+                <ul class = "nav navbar-nav navbar-right">
+                    <li class = "active"><a href = "top">Home</a></li>
+                    <li><a href = "#about">Signup</a></li>
+                    <li><a href = "chefs">Menus</a></li>
+                    <li><a href = "#services">About</a></li>
+                    <li><a href = "#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!--
     <a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i></a>
     <nav id="sidebar-wrapper">
         <ul class="sidebar-nav">
@@ -46,16 +51,17 @@
             </li>
         </ul>
     </nav>
+-->
 
     <!-- Header -->
     <header id="top" class="header">
-        <div class="text-vertical-center">
-            <h1>OnCampusChef</h1>
-            <h3>Our Chef, Your Kitchen</h3>
+        <div class="text-vertical-center layer">
+            <h1 id = "special-font">OnCampusChef</h1>
+            <h3 id = "slogan">Your Kitchen, Our Chef</h3>
             <br>
             <a href="#about" class="btn btn-dark btn-lg">Sign up</a>
         </div>
-    </header>
+    </header>   
 
     <!-- About -->
     <section id="about" class="about">
@@ -63,7 +69,7 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2>Tired of Diner Food?</h2>
-                    <p class="lead">Our service has plenty of healthy alternatives <a target="_blank" href="http://www.oncampuschef.com/menu-2/">See our menus</a>.</p>
+                    <p class="lead">Our service has plenty of healthy alternatives <a href="static_pages/chefs">See our menus</a>.</p>
                 </div>
             </div>
             <!-- /.row -->
@@ -73,7 +79,7 @@
 
     <!-- Services -->
     <!-- The circle icons use Font Awesome's stacked icon classes. For more information, visit http://fontawesome.io/examples/ -->
-    <section id="services" class="services bg-primary">
+    <section id="services" class="services"> <!-- bg-primary -->
 
         <h3 class = "text-center"> Simple Steps </h3>
         </br>
@@ -109,53 +115,55 @@
 
     <!-- Portfolio -->
     <section id="portfolio" class="portfolio">
-        <div class="container">
+        
+      <div class="container">
             <div class="row">
                 <div class="col-lg-10 col-lg-offset-1 text-center">
-                    <h2>Some of our healthy gourmet options</h2>
+                    <h2>Some of our Healthy Gourmet Options</h2>
                     <hr class="small">
                     <div class="row">
                         <div class="col-md-6">
                             <div class="portfolio-item">
                                 <a href="#">
-                                   <%= image_tag("food1.jpg", class: "img-portfolio img-responsive") %>
+                                    <%= image_tag("food1.jpg", class: "img-portfolio img-responsive", alt: "food1") %>
                                 </a>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="portfolio-item">
                                 <a href="#">
-                                     <%= image_tag("food2.jpg", class: "img-portfolio img-responsive") %>
+                                    <%= image_tag("food2.jpg", class: "img-portfolio img-responsive", alt: "food2") %>
                                 </a>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="portfolio-item">
                                 <a href="#">
-                                     <%= image_tag("food3.jpg", class: "img-portfolio img-responsive") %>
+                                    <%= image_tag("food3.jpg", class: "img-portfolio img-responsive", alt: "food3") %>
                                 </a>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="portfolio-item">
                                 <a href="#">
-                                     <%= image_tag("food4.jpg", class: "img-portfolio img-responsive") %>
+                                    <%= image_tag("food4.jpg", class: "img-portfolio img-responsive", alt: "food4") %>
                                 </a>
                             </div>
                         </div>
                     </div>
                     <!-- /.row (nested) -->
-                    <a href="#" class="btn btn-dark">View our menus</a>
+                    <a href="#" class="btn btn-dark">View Our Menus</a>
                 </div>
                 <!-- /.col-lg-10 -->
             </div>
             <!-- /.row -->
         </div>
         <!-- /.container -->
+
     </section>
 
     <!-- Call to Action -->
-    <aside class="call-to-action bg-primary">
+    <aside class="call-to-action call-to-action-banner"> <!-- bg-primary -->
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -170,7 +178,7 @@
     
 
     <!-- Footer -->
-    <footer>
+    <footer id = "contact">
         <div class="container">
             <div class="row">
                 <div class="col-lg-10 col-lg-offset-1 text-center">
@@ -188,12 +196,6 @@
             </div>
         </div>
     </footer>
-
-    <!-- jQuery Version 1.11.0 -->
-    <script src="js/jquery-1.11.0.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
 
     <!-- Custom Theme JavaScript -->
     <script>
@@ -225,8 +227,17 @@
             }
         });
     });
+
+       $(document).ready(function(){
+        $(window).scroll(function(){
+            if($(window).scrollTop() > $(window).height()){
+                $("#stickyheader").css('opacity','1');   
+            } else {
+                $("#stickyheader").css('opacity', '0');
+            }
+        })
+       })
+
     </script>
 
-</body>
 
-</html>
