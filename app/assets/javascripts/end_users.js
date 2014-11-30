@@ -21,6 +21,9 @@ $(document).ready(function() {
 
     // clear error state
     this.clear_previous_errors();
+    
+    //imperfect way of showing successful submit
+     window.alert("Thank you for submitting a request! One of our representatives will contact you within 24 hours.");
   };
 
   $.fn.render_form_errors = function(errors){

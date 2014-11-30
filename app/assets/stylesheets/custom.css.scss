@@ -168,3 +168,32 @@ ul.unstyled {
     
 }
 
+.nav-arrow {
+	color: white;
+}
+
+.potentialUser {
+	background-color: #CECECE
+}
+
+.about-row {
+    display: table;
+    margin-bottom: 80px;
+}
+
+[class*="about-col"] {
+    float: none;
+    display: table-cell;
+    vertical-align: top;
+}
+
+.about-page {
+
+	background-image:URL("/assets/about-bg.jpg");
+	color: white;
+
+}
+
+.pricing-page {
+	
+}

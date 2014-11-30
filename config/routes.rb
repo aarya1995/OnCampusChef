@@ -10,6 +10,7 @@ Oncampuschef::Application.routes.draw do
   get "static_pages/about"
   get "static_pages/chefs"
   resources :end_users
+  resources :pot_users
 
   match '/signup', to: 'end_users#menu1', via: 'get'
   match '/chefs', to: 'static_pages#chefs', via: 'get'

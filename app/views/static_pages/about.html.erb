@@ -1,2 +1,26 @@
-<h1>StaticPages#about</h1>
-<p>Find me in app/views/static_pages/about.html.erb</p>
+<% provide(:title, 'About') %>
+
+<div class="about-page">
+	<div class= "layer">
+<%= render 'shared/header' %>
+</br>
+</br>
+</br>
+</br>
+</br>
+
+    <div class="container">
+      
+      <div class = "row about-row">
+      	<div class = "col-md-4 about-col"><h2 class="left-align">What is it?</h2></br><p class="left-align">OnCampusChef is a service that is dedicated to providing college students affordable, healthy, and downright delicious meals for the week by connecting you to students who are passionate and love cooking! Every week, you can choose a different chef who specializes in a different style and culture of cooking. Each of our chefs provides their own cooking gear and are also University of Maryland students (graduate or undergraduate) to ensure your safety and belongings. In addition, all of our chefs have experience in the kitchen and must pass a food and handling course (Mandated by the Maryland State Health department) before being allowed to cook!</p></br><button type="button" class="btn btn-primary btn-lg left-align">Find out more &raquo;</button></div>
+      	<div class = "col-md-4 about-col"><h2 class="left-align">How it works</h2></br><p class="left-align">Simply look through our menu, select a meal plan, and wait for our call! Once we call you, we will complete payment procedures (Via Venmo) and deliver the groceries to your apartment! Note: If you are ordering with roommates/friends, you can only select one plan unless there is an asterisk next to the plan in question. However, our chefs are highly versatile and if you would like to request a specific meal, do so on the sign up form!</p></br><button type="button" class="btn btn-primary btn-lg left-align">Find out more &raquo;</button></div>
+      	<div class = "col-md-4 about-col"><h2 class="left-align">Can this be real?</h2></br><p class="left-align">Your roommates and yourself can be eating as low as $4 a meal! How is this possible? Check out our pricing section for more details! More importantly, help us give power back to the students to eat what you want at a fair and reasonable price!</p></br>      <button type="button" class="btn btn-primary btn-lg left-align">Find out more &raquo;</button></div>
+      </div>
+    </div> <!-- /container -->
+</br>
+</br>
+
+</div>
+
+<%= render 'shared/footer' %>
+</div>

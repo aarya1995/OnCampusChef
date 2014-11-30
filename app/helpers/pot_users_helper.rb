@@ -1,0 +1,2 @@
+module PotUsersHelper
+end
