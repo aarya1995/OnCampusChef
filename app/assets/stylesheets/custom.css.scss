@@ -173,7 +173,8 @@ ul.unstyled {
 }
 
 .potentialUser {
-	background-color: #CECECE
+	background-image:URL("/assets/texture-bg.png");
+	color: white;
 }
 
 .about-row {
@@ -194,6 +195,6 @@ ul.unstyled {
 
 }
 
-.pricing-page {
-	
+#plan-title {
+	color: white;
 }

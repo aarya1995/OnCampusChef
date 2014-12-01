@@ -1,0 +1,31 @@
+<div class="potentialUser">
+<%= render 'shared/header' %>
+</br>
+</br>
+</br>
+</br>
+</br>
+
+<% flash.each do |key, value| %>
+		<%= content_tag(:div, value, class: "alert alert-#{key}") %>
+<% end %>
+<div class="container" id="potential-user-form-container">
+	<div class="row">
+		<h1 class="left-align">Get a free consultation!</h3>
+		</br>
+	<h4 class="left-align">Have one of our representatives come to your apartment/home for free to further explain the process!</h4>
+</br>
+		<div class="span6 offset3">
+			<%= render 'form' %>
+		</div>
+    </div>
+</div>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+<%= render 'shared/footer' %>
+</div>

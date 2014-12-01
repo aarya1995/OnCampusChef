@@ -1,4 +1,4 @@
-<% provide(:title, 'EatSmart Meal Plan') %>
+<% provide(:title, 'AsianFusion Meal Plan') %>
 <%= render 'shared/header' %>
 
 </br>
@@ -31,44 +31,49 @@
 
 
 <div class="container food-container">
-	<h1 id = "plan-title">The EatSmart Meal Plan</h1>
+	<h1 id="plan-title">The AsianFusion Meal Plan</h1>
 	<div class="row portfolio-item-food food-top">
 		<div class="col-md-4">
-				<%= image_tag("food1.jpg", alt: "food1", class: "img-responsive food img-thumbnail center-block") %>
-				<h4 class="text-center">Tomato Basil and Spinach Risotto</h4>
+				<%= image_tag("beefbrocolli.jpg", alt: "food1", class: "img-responsive food img-thumbnail center-block") %>
+				<h4 class="text-center">Beef with Broccoli</h4>
 		</div>
 
 		<div class="col-md-4">
-				<%= image_tag("food2.jpg", alt: "food1", class: "img-responsive food img-thumbnail center-block") %>
-				<h4 class="text-center">Farfalle with Watercress, Cherry Tomatoes, and Feta</h4>
+				<%= image_tag("chicken.jpg", alt: "food1", class: "img-responsive food img-thumbnail center-block") %>
+				<h4 class="text-center">3 Cups Chicken</h4>
 		</div>
 
 		<div class="col-md-4">
-				<%= image_tag("baked-salmon.jpg", alt: "food1", class: "img-responsive food img-thumbnail center-block") %>
-				<h4 class="text-center">Baked Salmon in light sauce w/ Rice</h4>
+				<%= image_tag("friedrice.jpg", alt: "food1", class: "img-responsive food img-thumbnail center-block") %>
+				<h4 class="text-center">Fried Rice</h4>
 		</div>
 	</div>
 
 	<div class="row portfolio-item-food">
 		<div class="col-md-4">
-			<%= image_tag("food3.jpg", alt: "food1", class: "img-responsive food img-thumbnail center-block") %>
-				<h4 class="text-center">Mashed Potatoes and Meatloaf</h4>
+			<%= image_tag("mango chicken.jpg", alt: "food1", class: "img-responsive food img-thumbnail center-block") %>
+				<h4 class="text-center">Mango Chicken with Stir Fried Rice</h4>
 		</div>
 
 		<div class="col-md-4">
-			<%= image_tag("food4.jpg", alt: "food1", class: "img-responsive food img-thumbnail center-block") %>
-					<h4 class="text-center">Manicotti (ricotta w/ spinach and/or meat)</h4>
+			<%= image_tag("padthai.jpg", alt: "food1", class: "img-responsive food img-thumbnail center-block") %>
+					<h4 class="text-center">Pad Thai</h4>
+		</div>
+
+		<div class="col-md-4">
+			<%= image_tag("wontons.jpg", alt: "food1", class: "img-responsive food img-thumbnail center-block") %>
+					<h4 class="text-center">Won Tons</h4>
 		</div>
 	</div>
 
-	<button type="button" class="btn btn-primary btn-lg center-block order-button" data-toggle="modal" data-target="#basicModal">Order this EatSmart Meal Plan</button>
+	<button type="button" class="btn btn-primary btn-lg center-block order-button" data-toggle="modal" data-target="#basicModal">Order the AsianFusion Meal Plan</button>
 
 	<div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content modal-bg">
             <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-times"></i></button>
-            <h4 class="modal-title" id="myModalLabel">Order the EatSmart Meal Plan</h4>
+            <h4 class="modal-title" id="myModalLabel">Order the AsianFusion Meal Plan</h4>
             </div>
             <div class="modal-body">
                 <%= render 'form', modal: true %>

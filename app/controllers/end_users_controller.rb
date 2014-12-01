@@ -4,6 +4,22 @@ class EndUsersController < ApplicationController
 		@user = EndUser.new
 	end
 
+	def AsianFusion
+		@user = EndUser.new
+	end
+
+	def SouthAsian
+		@user = EndUser.new
+	end
+
+	def ChineseKorean
+		@user = EndUser.new
+	end
+
+	def AmericanDelight
+		@user = EndUser.new
+	end
+
 	def create
 		@user = EndUser.new(user_params)
 
@@ -25,6 +41,6 @@ class EndUsersController < ApplicationController
 	private
 
 	def user_params
-  		params.require(:end_user).permit(:name, :phonenumber, :address, :email, :mealplan)
+  		params.require(:end_user).permit(:name, :phonenumber, :address, :email, :mealplan, :plan)
   	end
 end

@@ -1,18 +1,20 @@
 Oncampuschef::Application.routes.draw do
 
-  devise_for :clients
-  get "static_pages/home"
-  get "static_pages/menu"
+
+
   get "static_pages/pricing"
-  get "static_pages/order"
-  get "static_pages/promotions"
-  get "static_pages/faq"
   get "static_pages/about"
   get "static_pages/chefs"
   resources :end_users
   resources :pot_users
+  resources :consultations
 
-  match '/signup', to: 'end_users#menu1', via: 'get'
+  match '/EatSmart', to: 'end_users#menu1', via: 'get'
+  match '/AsianFusion', to: 'end_users#AsianFusion', via: 'get'
+  match '/SouthAsian', to: 'end_users#SouthAsian', via: 'get'
+  match '/ChineseKorean', to: 'end_users#ChineseKorean', via: 'get'
+  match '/AmericanDelight', to: 'end_users#AmericanDelight', via: 'get'
+
   match '/chefs', to: 'static_pages#chefs', via: 'get'
 
   get 'pages/index' => 'high_voltage/pages#show', id: 'index'
