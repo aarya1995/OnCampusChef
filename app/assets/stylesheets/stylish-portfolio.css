@@ -8,11 +8,6 @@
 
 font-family: 'Cookie', cursive;
 
- @font-face {
-        font-family: "Scriptorama Hostess JF";
-        src: url(/assets/Scriptorama Hostess JF.ttf) format("truetype");
-    }
-
 #special-font {
 
     font-family: "Cookie";
