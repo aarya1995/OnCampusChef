@@ -6,6 +6,8 @@
 
 /* Global Styles */
 
+font-family: 'Cookie', cursive;
+
  @font-face {
         font-family: "Scriptorama Hostess JF";
         src: url(/assets/Scriptorama Hostess JF.ttf) format("truetype");
@@ -13,15 +15,17 @@
 
 #special-font {
 
-    font-family: "Scriptorama Hostess JF";
-    font-size: 8em;
+    font-family: "Cookie";
+    font-size: 9em;
+    font-weight: lighter;
     
 
 }
 
 #slogan {
-    font-family: "Scriptorama Hostess JF";
-    font-size: 3em;
+    font-family: "Cookie";
+    font-size: 4em;
+    font-weight: lighter;
     
 }
 
