@@ -6,6 +6,9 @@
 
 /* Global Styles */
 
+ <!-- custom font Cookie -->
+  @import url(https://fonts.googleapis.com/css?family=Cookie);
+
 font-family: 'Cookie', cursive;
 
 #special-font {
