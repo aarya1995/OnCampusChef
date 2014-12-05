@@ -20,6 +20,18 @@ class EndUsersController < ApplicationController
 		@user = EndUser.new
 	end
 
+	def ClassicLiving
+		@user = EndUser.new
+	end
+
+	def SpecialtySandwiches
+		@user = EndUser.new
+	end
+
+	def bodybuilding
+		@user = EndUser.new
+	end
+
 	def create
 		@user = EndUser.new(user_params)
 

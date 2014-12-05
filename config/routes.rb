@@ -14,6 +14,9 @@ Oncampuschef::Application.routes.draw do
   match '/SouthAsian', to: 'end_users#SouthAsian', via: 'get'
   match '/ChineseKorean', to: 'end_users#ChineseKorean', via: 'get'
   match '/AmericanDelight', to: 'end_users#AmericanDelight', via: 'get'
+  match '/ClassicLiving', to: 'end_users#ClassicLiving', via: 'get'
+  match '/SpecialtySandwiches', to: 'end_users#SpecialtySandwiches', via: 'get'
+  match '/bodybuilding', to: 'end_users#bodybuilding', via: 'get'
 
   match '/chefs', to: 'static_pages#chefs', via: 'get'
 

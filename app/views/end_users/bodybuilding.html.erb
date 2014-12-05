@@ -1,0 +1,91 @@
+<% provide(:title, 'BodyBuilding Meal Plan') %>
+<%= render 'shared/header' %>
+
+</br>
+</br>
+
+<div class="jumbotron chef-container">
+  <div class = "container">
+	<div class="row chef-description">
+		<div class="col-xs-6 col-md-4 chef-col">
+	    <div class ="chef">
+		    <a href="#">
+		      <%= image_tag("chef2.png", data: "holder.js/100%x180", alt: "chef", class: "img-circle") %>
+		    </a>
+
+			</br>
+			</br>
+		    <h4 id = "chefName">Emeril Green</h4>
+	    </div>
+	  </div>
+
+	  <div class="col-xs-6 col-md-8 chef-bio chef-col">
+	    <p class = "chef-bio">
+			Emeril John Lagasse (born October 15, 1959) is an American celebrity chef, restaurateur, television personality, and cookbook author. A regional James Beard Award winner, he is perhaps most notable for his Food Network shows Emeril Live and Essence of Emeril, as well as catchphrases such as, "Kick it up a notch!" and "Bam!" Lagasse's portfolio of media, products, and restaurants generates an estimated US$150 million annually in revenue.
+	    </p>
+	    
+	  </div>
+	</div>
+  </div>
+</div>
+
+
+<div class="container food-container">
+	<h1 id="plan-title">BodyBuilding Meal Plan</h1>
+	<div class="row portfolio-item-food food-top">
+		<div class="col-md-4">
+				<%= image_tag("chickenblackbeans.jpg", alt: "food1", class: "img-responsive food img-thumbnail center-block") %>
+				<h4 class="text-center">Chicken with Black Beans</h4>
+		</div>
+
+		<div class="col-md-4">
+				<%= image_tag("chickenquinoa.jpg", alt: "food1", class: "img-responsive food img-thumbnail center-block") %>
+				<h4 class="text-center">Chicken with Quinoa</h4>
+		</div>
+
+		<div class="col-md-4">
+				<%= image_tag("chickensalad.jpg", alt: "food1", class: "img-responsive food img-thumbnail center-block") %>
+				<h4 class="text-center">Chicken Salad</h4>
+		</div>
+	</div>
+
+	<div class="row portfolio-item-food">
+		<div class="col-md-4">
+			<%= image_tag("quinoasalad.jpg", alt: "food1", class: "img-responsive food img-thumbnail center-block") %>
+				<h4 class="text-center">Quinoa Salad</h4>
+		</div>
+
+		<div class="col-md-4">
+			<%= image_tag("tilapia.jpg", alt: "food1", class: "img-responsive food img-thumbnail center-block") %>
+					<h4 class="text-center">Tilapia</h4>
+		</div>
+	</div>
+
+	<button type="button" class="btn btn-primary btn-lg center-block order-button" data-toggle="modal" data-target="#basicModal">BodyBuilding Meal Plan</button>
+
+	<div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content modal-bg">
+            <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-times"></i></button>
+            <h4 class="modal-title" id="myModalLabel">BodyBuilding Meal Plan</h4>
+            </div>
+            <div class="modal-body">
+                <%= render 'form', modal: true %>
+            </div>
+            
+            <div class="modal-footer">
+            	
+            	<p class="text-left" style="color:green">&ast;Once you submit your order, one of our representatives will contact you in 24 hours to setup the appointment</p>
+				
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	        </div>
+	    </div>
+	  </div>
+	</div>
+
+</div>
+
+<%= render 'shared/footer' %>
+
+
