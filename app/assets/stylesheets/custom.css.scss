@@ -19,13 +19,6 @@
 	margin-bottom: 20px;
 }
 
-
-
-#chefName {
-
-	margin-left: 80px;
-}
-
 .portfolio-item-food {
 
 	margin-bottom: 25px;
@@ -56,7 +49,7 @@
 
 .chef {
 
-	margin-left: -5%;
+	margin-right:  90px;
 }
 
 .chef-container {
@@ -168,6 +161,11 @@ ul.unstyled {
     
 }
 
+.layer2 {
+	background-color: rgba(0, 0, 0, 0.1);
+    
+}
+
 .nav-arrow {
 	color: white;
 }
@@ -190,7 +188,7 @@ ul.unstyled {
 
 .about-page {
 
-	background-image:URL("/assets/about-bg.jpg");
+	background-image:URL("/assets/about2-bg.jpg");
 	color: white;
 
 }
@@ -215,3 +213,8 @@ ul.unstyled {
     
 }
 
+.about-row {
+	p {
+		font-size: 1.2em;
+	}
+}

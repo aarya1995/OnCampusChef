@@ -12,10 +12,6 @@ class EndUsersController < ApplicationController
 		@user = EndUser.new
 	end
 
-	def ChineseKorean
-		@user = EndUser.new
-	end
-
 	def AmericanDelight
 		@user = EndUser.new
 	end

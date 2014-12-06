@@ -10,18 +10,18 @@
 		<div class="col-xs-6 col-md-4 chef-col">
 	    <div class ="chef">
 		    <a href="#">
-		      <%= image_tag("chef2.png", data: "holder.js/100%x180", alt: "chef", class: "img-circle") %>
+		      <%= image_tag("chef2.png", data: "holder.js/100%x180", alt: "chef", class: "img-circle center-block") %>
 		    </a>
 
 			</br>
 			</br>
-		    <h4 id = "chefName">Emeril Green</h4>
+		    <h4 id = "chefName" class="text-center">Faisal Menon</h4>
 	    </div>
 	  </div>
 
 	  <div class="col-xs-6 col-md-8 chef-bio chef-col">
 	    <p class = "chef-bio">
-			Emeril John Lagasse (born October 15, 1959) is an American celebrity chef, restaurateur, television personality, and cookbook author. A regional James Beard Award winner, he is perhaps most notable for his Food Network shows Emeril Live and Essence of Emeril, as well as catchphrases such as, "Kick it up a notch!" and "Bam!" Lagasse's portfolio of media, products, and restaurants generates an estimated US$150 million annually in revenue.
+			Faisal has experience working as a professional chef. He spent his summer touring various countries throughout Asia and Europe, learning each cuisine and adding it to his repertoire. His specialty and passion lies in cooking South Asian food, particularly Indian. 
 	    </p>
 	    
 	  </div>
@@ -31,7 +31,7 @@
 
 
 <div class="container food-container">
-	<h1 id="plan-title">The SouthAsian Cuisine Meal Plan</h1>
+	<h1 id="plan-title">The South Asian Cuisine Meal Plan</h1>
 	<div class="row portfolio-item-food food-top">
 		<div class="col-md-4">
 				<%= image_tag("biryani.jpg", alt: "food1", class: "img-responsive food img-thumbnail center-block") %>
@@ -66,14 +66,14 @@
 		</div>
 	</div>
 
-	<button type="button" class="btn btn-primary btn-lg center-block order-button" data-toggle="modal" data-target="#basicModal">Order the SouthAsian Cuisine Meal Plan</button>
+	<button type="button" class="btn btn-primary btn-lg center-block order-button" data-toggle="modal" data-target="#basicModal">Order the South Asian Cuisine Meal Plan</button>
 
 	<div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content modal-bg">
             <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-times"></i></button>
-            <h4 class="modal-title" id="myModalLabel">Order the SouthAsian Cuisine Meal Plan</h4>
+            <h4 class="modal-title" id="myModalLabel">Order the South Asian Cuisine Meal Plan</h4>
             </div>
             <div class="modal-body">
                 <%= render 'form', modal: true %>
