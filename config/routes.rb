@@ -4,6 +4,7 @@ Oncampuschef::Application.routes.draw do
 
   get "static_pages/pricing"
   get "static_pages/about"
+  get "static_pages/about_us"
   get "static_pages/chefs"
   resources :end_users
   resources :pot_users
