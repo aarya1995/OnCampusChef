@@ -2,10 +2,12 @@ Oncampuschef::Application.routes.draw do
 
 
 
+  devise_for :customers
   get "static_pages/pricing"
   get "static_pages/about"
   get "static_pages/about_us"
   get "static_pages/chefs"
+  get "static_pages/test_page"
   resources :end_users
   resources :pot_users
   resources :consultations
