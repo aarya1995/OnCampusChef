@@ -1,0 +1,41 @@
+<body class="profile-page">
+<% provide(:title, 'Profile') %>
+<%= render 'shared/header' %>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<h1 class="profile-text">Welcome, <%= @customer.customername %></h1>
+		</div>
+	</div>
+
+	<div class="row">
+
+		<div class="col-md-12 user-panel">
+			<div role="tabpanel">
+
+			  <!-- Nav tabs -->
+			  <ul class="nav nav-tabs" role="tablist">
+			    <li role="presentation" class="active"><a href="#orderhistory" aria-controls="orderhistory" role="tab" data-toggle="tab">Order History</a></li>
+			    <li role="presentation"><a href="#trackorder" aria-controls="trackorder" role="tab" data-toggle="tab">Track Orders</a></li>
+			  </ul>
+
+			  <!-- Tab panes -->
+			  <div class="tab-content">
+			    <div role="tabpanel" class="tab-pane fade in active" id="orderhistory">
+
+			    	<h3 class="profile-text">You have not ordered yet</h3>
+			    	<a href="/static_pages/chefs" class="btn btn-warning btn-lg" role="button">Menu</a>
+
+			    </div>
+			    <div role="tabpanel" class="tab-pane fade in" id="trackorder">...</div>
+			  </div>
+
+			</div>
+		</div>
+	</div>
+
+	
+</div>
+
+</body>

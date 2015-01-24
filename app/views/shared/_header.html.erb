@@ -1,4 +1,4 @@
-<div class = "navbar navbar-inverse navbar-fixed-top navigation">
+<div class = "navbar navbar-inverse navbar-static-top navigation">
 	<div class = "container">
 		<div class = "navbar-header">
 			<a href= "/pages/index" class = "navbar-brand home-link">OnCampusChef</a>
@@ -21,6 +21,11 @@
                       </ul>
                     </li>
 				<li><a href = "/static_pages/about_us">Our Team</a></li>
+
+				<% if signed_in? %>
+					
+					<li><%= link_to('Sign Out', destroy_customer_session_path, :method => :delete) %></li>
+				<% end %>
 			</ul>
 		</div>
 	</div>

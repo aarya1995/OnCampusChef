@@ -1,8 +1,7 @@
 Oncampuschef::Application.routes.draw do
 
+  devise_for :customers, :controllers => { :omniauth_callbacks => "customers/omniauth_callbacks" }
 
-
-  devise_for :customers
   get "static_pages/pricing"
   get "static_pages/about"
   get "static_pages/about_us"
@@ -19,8 +18,8 @@ Oncampuschef::Application.routes.draw do
   match '/ClassicLiving', to: 'end_users#ClassicLiving', via: 'get'
   match '/SpecialtySandwiches', to: 'end_users#SpecialtySandwiches', via: 'get'
   match '/bodybuilding', to: 'end_users#bodybuilding', via: 'get'
-
   match '/chefs', to: 'static_pages#chefs', via: 'get'
+  match '/profile', to: 'customers#show', via: 'get'
 
   get 'pages/index' => 'high_voltage/pages#show', id: 'index'
   # The priority is based upon order of creation: first created -> highest priority.
