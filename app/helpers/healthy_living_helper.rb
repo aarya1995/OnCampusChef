@@ -1,0 +1,2 @@
+module HealthyLivingHelper
+end

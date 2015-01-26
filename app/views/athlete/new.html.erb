@@ -1,0 +1,63 @@
+<% provide(:title, 'Athlete') %>
+<%= render 'shared/header' %>
+
+<div class="container" style="margin-top: 20px;">
+	<div class="row">
+		  <div class="col-sm-12">
+            <legend><%= current_customer.customername %>:</legend>
+        </div>
+        <!-- panel preview -->
+        <div class="col-sm-5">
+            <h4>Fill out order:</h4>
+            <div class="panel panel-default">
+            	<%= form_for(@order) do |f| %>
+				  <% if @order.errors.any? %>
+				    <div id="error_explanation">
+				      <h2><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h2>
+
+				      <ul>
+				      <% @order.errors.full_messages.each do |msg| %>
+				        <li><%= msg %></li>
+				      <% end %>
+				      </ul>
+				    </div>
+				  <% end %>
+                <div class="panel-body form-horizontal payment-form">
+                    <div class="form-group">
+
+                    	<div style="margin-left: 5%;">
+	                    	<p>
+						     Please enter the number of up to three food items, separated by commas, from the athlete menu:
+						 	</p>
+
+						 	<ol>
+						 	 <li>Chicken breast with brown rice</li>
+						     <li>Tilapia with broccoli</li>
+						     <li>Sweet potato with lemon chicken</li>
+						     <li>Chicken salad with quinoa</li>
+						     <li>Chicken breast with cous cous </li>
+						     <li>Tilapia with brown rice</li>
+
+						 	</ol>
+					    </div>
+					</br>
+					     <div class="col-sm-12">
+					     	<%= f.text_area :food_items, size: '50x3', class: 'form-control' %>
+					 	</div>
+					    <span class="help-block"></span>
+					</div>
+                    
+                     <%# Added Bootstrap classes %>
+					  <div class="actions">
+					    <%= f.submit 'Submit', class: 'btn btn-info', name: 'athlete_button' %>
+					  </div>
+
+                </div>
+            </div>  
+            <% end %>         
+        </div>
+	</div>
+</div>
+
+<%= render 'shared/footer' %>
+

@@ -1,5 +1,7 @@
 class Order < ActiveRecord::Base
 
 	belongs_to :customer
-	belongs_to :mealplan
+	
+	validates :food_items, presence: true
+	validates :group, presence: true
 end

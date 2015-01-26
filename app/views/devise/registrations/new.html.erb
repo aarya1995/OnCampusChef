@@ -14,9 +14,8 @@
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-xs-6 col-sm-6 col-md-6 separator social-login-box"> <br />
-                            <a href="#" class="btn facebook btn-block" role="button">Sign Up using Facebook</a>
+                            <%= link_to "Log in using Facebook", customer_omniauth_authorize_path(:facebook), class: 'btn facebook btn-block', role: 'button' %>
                             <br />
-                            <a href="#" class="btn twitter btn-block" role="button">Sign Up using Twitter</a>
                         </div>
                         <div class="col-xs-6 col-sm-6 col-md-6 login-box">
                             <form role="form">

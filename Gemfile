@@ -25,6 +25,8 @@ gem 'omniauth-facebook'
 #high_voltage gem for integrating the sexy front end code
 gem 'high_voltage', '~> 2.2.1'
 
+gem 'cancan'
+
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
