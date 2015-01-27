@@ -5,10 +5,6 @@ class HomestyleController < ApplicationController
 		@order = Order.new
 	end
 
-	def group
-		@order = Order.new
-	end
-
 	def create
 		@order = current_customer.orders.build(order_params)
 		@order.mealplan = "homestyle"
@@ -29,6 +25,6 @@ class HomestyleController < ApplicationController
 	end
 
 	def order_params
-		params.require(:order).permit(:food_items)
+		params.require(:order).permit(:food_items, :group, :contact_info)
 	end
 end

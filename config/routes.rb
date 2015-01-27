@@ -12,12 +12,6 @@ Oncampuschef::Application.routes.draw do
   get "static_pages/homestyle"
   get "static_pages/budget"
 
-   resources :homestyle do
-      collection do
-        get :group
-      end
-    end
-
   resources :end_users
   resources :pot_users
   resources :consultations

@@ -4,4 +4,6 @@ class Order < ActiveRecord::Base
 	
 	validates :food_items, presence: true
 	validates :group, presence: true
+	validates :contact_info, presence: true
+	validates :group, presence: true
 end

@@ -10,27 +10,18 @@ class OrdersController < ApplicationController
 
 		if params[:athlete_button]
 			@order.mealplan = "athlete"
-			@order.group = "1"
+			
 		elsif params[:healthy_button]
 			@order.mealplan = "healthy living"
-			@order.group = "1"
+			
 		elsif params[:homestyle_button]
 			@order.mealplan = "home style"
-			@order.group = "1"
+			
 		elsif params[:budget_button]
 			@order.mealplan = "budget"
-			@order.group = "1"
+			
 		end
 
-		if params[:athlete_group_button]
-			@order.mealplan = "athlete"
-		elsif params[:healthy_group_button]
-			@order.mealplan = "healthy living"
-		elsif params[:homestyle_group_button]
-			@order.mealplan = "home style"
-		elsif params[:budget_group_button]
-			@order.mealplan = "budget"
-		end
 
 		respond_to do |format|
 
@@ -39,16 +30,34 @@ class OrdersController < ApplicationController
 				format.html { redirect_to '/profile' }
         		format.js
 			else
-				format.html { render action: 'new' }
-		        
-		        # added:
-		        format.js   { render json: @order.errors, status: :unprocessable_entity }
+
+				if @order.mealplan.eql? "athlete"	
+					format.html { redirect_to new_athlete_path }
+			        
+			        # added: not working after adding redirects
+			        format.js   { render json: @order.errors, status: :unprocessable_entity }
+			    elsif @order.mealplan.eql? "budget"	
+					format.html { redirect_to new_budget_path }
+			        
+			        # added: not working after adding redirects
+			        format.js   { render json: @order.errors, status: :unprocessable_entity }
+			    elsif @order.mealplan.eql? "home style"	
+					format.html { redirect_to new_homestyle_path }
+			        
+			        # added:
+			        format.js   { render json: @order.errors, status: :unprocessable_entity }
+			    elsif @order.mealplan.eql? "healthy living"	
+					format.html { redirect_to new_healthy_living_path }
+			        
+			        # added:
+			        format.js   { render json: @order.errors, status: :unprocessable_entity }
+			    end
 			end
 		end
 	end
 
 	def order_params
-		params.require(:order).permit(:food_items)
+		params.require(:order).permit(:food_items, :group, :contact_info)
 	end
 end
 

@@ -25,6 +25,6 @@ class AthleteController < ApplicationController
 	end
 
 	def order_params
-		params.require(:order).permit(:food_items)
+		params.require(:order).permit(:food_items,  :group, :contact_info)
 	end
 end

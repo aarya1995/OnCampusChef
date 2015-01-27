@@ -23,6 +23,16 @@
 				    </div>
 				  <% end %>
                 <div class="panel-body form-horizontal payment-form">
+
+                	 <div class="form-group">
+   <p style="font-weight: bold; margin-left: 5%;">How many people are in your group?<p>
+
+   	<div class="col-sm-12">
+	    <%= f.select(:group, options_for_select([['1 (Just me)', '1'], ['2', '2'], ['3', '3'], ['4', '4']]), { include_blank: true }, class: "btn btn-default dropdown-toggle form-control") %>
+	    <span class="help-block"></span>
+	</div>
+  </div>
+  
                     <div class="form-group">
 
                     	<div style="margin-left: 5%;">
@@ -46,11 +56,29 @@
 					 	</div>
 					    <span class="help-block"></span>
 					</div>
+
+					 <div class="form-group">
+
+                    	<div style="margin-left: 5%;">
+	                    	<p>
+						     Please enter a phone number we can reach you at:
+						 	</p>
+					    </div>
+						
+					     <div class="col-sm-12">
+					     	<%= f.text_field :contact_info, class: 'form-control' %>
+					 	</div>
+					    <span class="help-block"></span>
+					</div>
                     
                      <%# Added Bootstrap classes %>
 					  <div class="actions">
 					    <%= f.submit 'Submit', class: 'btn btn-info', name: 'athlete_button' %>
 					  </div>
+
+						</br>
+					  <p style="color:red;">*Once you submit your order, on of our representatives will contact you within 24 hours to setup the chef appointment and complete the payment</p>
+
 
                 </div>
             </div>  
