@@ -1,6 +1,6 @@
 Oncampuschef::Application.routes.draw do
 
-  #devise_for :customers, :controllers => { :omniauth_callbacks => "customers/omniauth_callbacks" }
+  devise_for :customers, :controllers => { :omniauth_callbacks => "customers/omniauth_callbacks" }
 
   #get "static_pages/pricing"
   #get "static_pages/about"
@@ -11,6 +11,7 @@ Oncampuschef::Application.routes.draw do
   #get "static_pages/athlete"
   #get "static_pages/homestyle"
   #get "static_pages/budget"
+  get "static_pages/editing"
 
   #resources :end_users
   #resources :pot_users
