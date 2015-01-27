@@ -1,38 +1,39 @@
 Oncampuschef::Application.routes.draw do
 
-  devise_for :customers, :controllers => { :omniauth_callbacks => "customers/omniauth_callbacks" }
+  #devise_for :customers, :controllers => { :omniauth_callbacks => "customers/omniauth_callbacks" }
 
-  get "static_pages/pricing"
-  get "static_pages/about"
-  get "static_pages/about_us"
-  get "static_pages/chefs"
-  get "static_pages/test_page"
-  get "static_pages/healthyliving"
-  get "static_pages/athlete"
-  get "static_pages/homestyle"
-  get "static_pages/budget"
+  #get "static_pages/pricing"
+  #get "static_pages/about"
+  #get "static_pages/about_us"
+  #get "static_pages/chefs"
+  #get "static_pages/test_page"
+  #get "static_pages/healthyliving"
+  #get "static_pages/athlete"
+  #get "static_pages/homestyle"
+  #get "static_pages/budget"
 
-  resources :end_users
-  resources :pot_users
-  resources :consultations
-  resources :healthy_living
-  resources :orders
-  resources :athlete
-  resources :homestyle
-  resources :budget
+  #resources :end_users
+  #resources :pot_users
+  #resources :consultations
+  #resources :healthy_living
+  #resources :orders
+  #resources :athlete
+  #resources :homestyle
+  #resources :budget
 
 
-  match '/EatSmart', to: 'end_users#menu1', via: 'get'
-  match '/AsianFusion', to: 'end_users#AsianFusion', via: 'get'
-  match '/SouthAsian', to: 'end_users#SouthAsian', via: 'get'
-  match '/AmericanDelight', to: 'end_users#AmericanDelight', via: 'get'
-  match '/ClassicLiving', to: 'end_users#ClassicLiving', via: 'get'
-  match '/SpecialtySandwiches', to: 'end_users#SpecialtySandwiches', via: 'get'
-  match '/bodybuilding', to: 'end_users#bodybuilding', via: 'get'
-  match '/chefs', to: 'static_pages#chefs', via: 'get'
-  match '/profile', to: 'customers#show', via: 'get'
+  #match '/EatSmart', to: 'end_users#menu1', via: 'get'
+  #match '/AsianFusion', to: 'end_users#AsianFusion', via: 'get'
+  #match '/SouthAsian', to: 'end_users#SouthAsian', via: 'get'
+  #match '/AmericanDelight', to: 'end_users#AmericanDelight', via: 'get'
+  #match '/ClassicLiving', to: 'end_users#ClassicLiving', via: 'get'
+  #match '/SpecialtySandwiches', to: 'end_users#SpecialtySandwiches', via: 'get'
+  #match '/bodybuilding', to: 'end_users#bodybuilding', via: 'get'
+  #match '/chefs', to: 'static_pages#chefs', via: 'get'
+  #match '/profile', to: 'customers#show', via: 'get'
 
   get 'pages/index' => 'high_voltage/pages#show', id: 'index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
