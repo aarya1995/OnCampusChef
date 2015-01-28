@@ -321,7 +321,11 @@ ul.unstyled {
 	position:relative;
 }
 
-
+.gallery
+{
+    display: inline-block;
+    margin-top: 20px;
+}
 
 .button-left {
 	margin-right: 2%;
@@ -340,3 +344,4 @@ ul.unstyled {
 .customer-order-button {
 	text-decoration: none;
 }
+

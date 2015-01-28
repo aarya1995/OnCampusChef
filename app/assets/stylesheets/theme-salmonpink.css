@@ -1521,6 +1521,8 @@ section.dark {
 }
 section.dark.with-bg {
   color: #2b2d35;
+  /* added by Abhas 01-28-2015 */
+  background: URL("/assets/cooking_banner.jpg") center center no-repeat;
   background-size: cover;
 }
 section.dark h1,
