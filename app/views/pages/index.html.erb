@@ -1,4 +1,232 @@
-<h1>Website under construction</h1>
-<h3>Our development team is working really hard right now to get the website </br>back up as soon as possible. 
-  If you have any questions feel free to leave a comment</br> on our facebook page or call 703-894-7630.
-</h3>
+
+<% provide(:title, 'Home') %>
+
+<script src="/assets/modernizr.custom.js"></script>
+
+
+<%= render 'shared/slicknavbar' %>
+
+
+    <!-- Hero Banner
+    ================================================== -->
+    <div id="intro-video" style="background-image: url( '/assets/chinese-food.jpg' ); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+      <a class="player" data-property="{videoURL:'https://www.youtube.com/watch?v=fwFnAtJhK9I',containment:'#intro-video',autoPlay:true, mute:true, startAt:0, printUrl:false,showControls:false, opacity:1, quality: 'highres'}"></a>
+        <div class="item">
+          <div class="container">
+            <div class="row">
+              <div class="carousel-caption-center colour-white">
+                
+                <h1>Redefining How You Eat On Campus</h1>
+                <p>We deliver the food you need at your convenience.</p>
+
+                <% if signed_in? %>
+
+                    <p><a class="btn btn-lg btn-primary scroll" href="/static_pages/chefs" role="button">Menu</a></p>
+
+
+                <% else %>
+
+                    <%= link_to('Get Started', new_customer_session_path, class: 'btn btn-lg btn-primary scroll', role: 'button')  %>
+
+                <% end %>
+
+              </div>
+            </div>
+          </div>
+          <div class="overlay-bg"></div>
+        </div>
+    </div>
+
+
+
+    <!-- About Section
+    ================================================== -->
+    <section id="about" class="content text-center light">
+
+      <div class="container">
+        <!-- Three columns of text below the carousel -->
+        <div class="row">
+          <div class="col-lg-12 overlay-text">
+            <h2>Simple Steps</h2>
+          </div><!-- /.col-lg-12 -->
+        </div><!-- /.row -->
+
+        <div class="row">
+          <div class="col-sm-4 text-center overlay-text icons">
+            <div class="icon-wrapper">
+              <i class="fa fa-search icon-large"></i>
+            </div>
+            <h3>Sign Up</h3>
+            <p>Create an account on our website and access our delicious meal plans</p>
+          </div>
+          <div class="col-sm-4 text-center overlay-text icons">
+            <div class="icon-wrapper">
+              <i class="fa fa-shopping-cart icon-large"></i>
+            </div>
+            <h3>Order</h3>
+            <p>Choose a meal plan for the week and submit an order</p>
+          </div>
+          <div class="col-sm-4 text-center overlay-text icons">
+            <div class="icon-wrapper">
+              <i class="fa fa-home icon-large"></i>
+            </div>
+            <h3>Relax</h3>
+            <p>We deliver your groceries and send your chef right to your door!</p>
+          </div>
+        </div><!-- /.row -->
+      </div>
+
+      <div class="overlay-bg light"></div>
+
+    </section>
+
+
+    <!-- Featured Sections
+    ================================================== -->
+    <section id="featured1" class="dark with-bg">
+
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-7 overlay-text">
+            <div class="vertical-align">
+              <h2>We are devoted to you</h2>
+              <p>Oncampuschef is a service that brings gourmet personal chef services to the college students at an affordable price. We believe that students should eat healthy delicious food that they want with power to choose their dishes every week.</p>
+            </div>
+
+            <p><a class="btn btn-lg btn-info" href="/static_pages/chefs" role="button">View the Menu</a></p>
+          </div>
+		
+          <div class="col-sm-5">
+			
+
+			<!--
+            <iframe width="420" height="315" src="//www.youtube.com/embed/tTvJpC_l_QM" frameborder="0" allowfullscreen class="center-block"></iframe> -->
+
+          </div>
+		
+        </div>
+      </div>
+
+    </section>
+
+
+    <section id="pricing" class="featured">
+
+      <div class="container">
+        <div class="row">
+
+          <div class="col-xs-6 col-sm-6 col-md-1 col-lg-1 left-panel"></div>
+          <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+                
+                    <!-- PRICE ITEM -->
+                    <div class="panel price panel-red">
+                        <div class="panel-heading  text-center">
+                        <h3>College Dining Plan</h3>
+                        </div>
+                        <div class="panel-body text-center">
+                            <p class="lead" style="font-size:40px"><strong>$2100+ / semester</strong></p>
+                        </div>
+                        
+                    </div>
+                    <!-- /PRICE ITEM -->
+                    
+                    
+                </div>
+
+                <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+                
+                    <!-- PRICE ITEM -->
+                    <div class="panel price panel-green">
+                        <div class="panel-heading arrow_box text-center">
+                        <h3>Eating Out</h3>
+                        </div>
+                        <div class="panel-body text-center">
+                            <p class="lead" style="font-size:40px"><strong>$1800 / semester</strong></p>
+                        </div>
+                        
+                    </div>
+                </br>
+
+                    <%= link_to('View pricing', '/static_pages/pricing', class: 'btn btn-lg btn-primary center-block', role: 'button')  %>
+                    <!-- /PRICE ITEM -->
+                    
+                    
+                </div>
+
+                <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+                
+                    <!-- PRICE ITEM -->
+                    <div class="panel price panel-blue">
+                        <div class="panel-heading arrow_box text-center">
+                        <h3>OnCampusChef Semester Plan</h3>
+                        </div>
+                        <div class="panel-body text-center">
+                            <p class="lead" style="font-size:40px"><strong>$1600 / semester</strong></p>
+                        </div>
+                       
+                    </div>
+                    <!-- /PRICE ITEM -->
+                    
+                    
+                </div>
+
+                <div class="col-xs-6 col-sm-6 col-md-1 col-lg-1"></div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Footer
+    ================================================== -->
+    <footer id="contact" class="footer">
+
+      <div class="container">    
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="col-sm-6 col-md-6">
+              <div class="footer-logo">
+                <h2>OnCampusChef</h2>
+                <p>(703) 894-7630</p>
+                <br>
+                <p class="muted">© 2014 OnCampusChef Inc.</p>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-6">
+              <h3>Company</h3>
+              <ul class="list-unstyled">
+                <li><a href="/static_pages/about">About</a></li>
+                <li><a href="/static_pages/about_us">Our Team</a></li>
+                <!--<li><a href="#">Jobs&emsp;<span class="label label-info">We're hiring!</span></a></li>  -->         
+              </ul>
+            </div>  
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <a class="icon" href="http://www.twitter.com/dparrelli" target="_blank"><i class="fa fa-twitter"></i></a>
+            <a class="icon" href="#" target="_blank"><i class="fa fa-facebook"></i></a>
+          </div>
+        </div>
+      </div>
+
+    </footer>
+
+    <script src="/assets/classie.js"></script>
+    <script src="/assets/cbpAnimatedHeader.min.js"></script>
+    <script src="/assets/jquery.mb.YTPlayer.js"></script>
+    <script src="/assets/owl.carousel.min.js"></script>
+    <script src="/assets/scrollReveal.js"></script>
+    <script src="/assets/imagesloaded.pkgd.min.js" defer="defer"></script>
+    <script src="/assets/jquery.scrollTo.js" defer="defer"></script>
+    <script src="/assets/jquery.nav.js" defer="defer"></script>
+    <script src="/assets/jquery.magnific-popup.min.js" defer="defer"></script>
+    <script src="/assets/jqBootstrapValidation.js" defer="defer"></script>
+    <script src="/assets/zcustom.js"></script>
+
+    <script>
+
+      $(document).ready(function(){
+        $(".player").mb_YTPlayer();
+      });
+
+    </script>

@@ -321,11 +321,7 @@ ul.unstyled {
 	position:relative;
 }
 
-.gallery
-{
-    display: inline-block;
-    margin-top: 20px;
-}
+
 
 .button-left {
 	margin-right: 2%;
@@ -334,4 +330,13 @@ ul.unstyled {
 .ordering-buttons {
 	margin-left: 25%;
 	margin-top: 5%;
+}
+
+.food-images img {
+	height: 253px;
+	width: 300px;
+}
+
+.customer-order-button {
+	text-decoration: none;
 }
