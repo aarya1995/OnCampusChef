@@ -1,21 +1,62 @@
-<% provide(:title, 'About') %>
+   <% provide(:title, 'About') %>
 
-<div class="about-page">
-	<div class= "layer2">
-<%= render 'shared/header' %>
+   <%= render 'shared/header' %>
 
-    <div class="container">
-      
-      <div class = "row about-row">
-      	<div class = "col-md-4 about-col"><h2 class="left-align">What is it?</h2></br><p class="left-align">OnCampusChef is a service that is dedicated to providing college students affordable, healthy, and downright delicious meals for the week by connecting you to students who are passionate and love cooking! Every week, you can choose a different chef who specializes in a different style and culture of cooking. Each of our chefs provides their own cooking gear and are also University of Maryland students (graduate or undergraduate) to ensure your safety and belongings. In addition, all of our chefs have experience in the kitchen and must pass a food and handling course (Mandated by the Maryland State Health department) before being allowed to cook!</p></br><a href="/consultations/new"><button type="button" class="btn btn-primary btn-lg left-align">Sign up for a free consultation &raquo;</button></a></div>
-      	<div class = "col-md-4 about-col"><h2 class="left-align">How it works</h2></br><p class="left-align">Simply look through our menu, select a meal plan, and wait for our call! Once we call you, we will complete payment procedures (Via Venmo) and deliver the groceries to your apartment! Note: If you are ordering with roommates/friends, you can only select one plan unless there is an asterisk next to the plan in question. However, our chefs are highly versatile and if you would like to request a specific meal, do so on the sign up form!</p></br><a href="chefs"><button type="button" class="btn btn-primary btn-lg left-align">View our meal plans &raquo;</button></a></div>
-      	<div class = "col-md-4 about-col"><h2 class="left-align">Can this be real?</h2></br><p class="left-align">Your roommates and yourself can be eating as low as $5 a meal! How is this possible? Check out our pricing section for more details! More importantly, help us give power back to the students to eat what you want at a fair and reasonable price!</p></br><a href="pricing"><button type="button" class="btn btn-primary btn-lg left-align">View Pricing &raquo;</button></a></div>
-      </div>
-    </div> <!-- /container -->
-</br>
-</br>
+   <!-- Page Content -->
+    <div class="container" style="margin-top: 2%;">
 
-</div>
 
-<%= render 'shared/footer' %>
-</div>
+        <div class="row">
+            <div class="col-sm-8">
+                <h2>What We Do</h2>
+                <hr>
+                <p style="font-weight: bold; font-family: Arial; font-size: 1.2em;">OnCampusChef is a service that is dedicated to providing college students affordable, healthy, and downright delicious meals for the week by connecting you to students who are passionate about and love cooking!</p>
+                <p style="font-weight: bold; font-family: Arial; font-size: 1.2em;">Once you create an account, you can browse through our curated list of customizable meal plans and order your three favorite meals for that week. Once we receive your order and complete the transaction, we deliver the groceries straight to your doorstep and send you your own personal student chef who will meet you at a scheduled time. During the allotted time, your chef will bulk cook ten meals, and portion them into gladware that we provide so that you can eat at your convenience throughout the week.</p>
+                <p>
+                </br>
+                    <a class="btn btn-info btn-lg" href="/static_pages/chefs">Order Now &raquo;</a>
+                </p>
+            </div>
+            <div class="col-sm-4">
+                <h2>Contact Us</h2>
+                <address>
+                    <strong>OnCampusChef</strong>
+                </address>
+                <address>
+                    <abbr title="Phone">P:</abbr> (703) 894-7630
+                    <br>
+                    <abbr title="Email">E:</abbr> <a href="mailto:#">ryanpillai1@gmail.com</a>
+                </address>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <hr>
+
+        <div class="row">
+            <div class="col-sm-4">
+                
+                <h2>How it Works</h2>
+                <p>Simply create an account, look through our menu, select a meal plan, and wait for our call! Once we call you, we will complete payment procedures (Via Venmo) and deliver the groceries to your apartment! Note: You can also sign up as a group with your roommates or friends to drive down costs.</p>
+            </br><a href="/consultations/new"><button type="button" class="btn btn-info btn-lg left-align">Sign up for a free consultation &raquo;</button></a>
+            </div>
+            <div class="col-sm-4">
+              
+                <h2>Our Chefs</h2>
+                <p>Each of our chefs provides their own cooking gear and are also University of Maryland students (graduate or undergraduate) to ensure your safety and belongings. In addition, all of our chefs have experience in the kitchen and must pass a food and handling course (Mandated by the Maryland State Health department) before being allowed to cook!</p>
+            </br><a href="/static_pages/chefs"><button type="button" class="btn btn-info btn-lg left-align">Browse Our Menu &raquo;</button></a>
+            </div>
+            <div class="col-sm-4">
+               
+                <h2>Pricing</h2>
+                <p>Your roommates and yourself can be eating as low as $5 a meal! How is this possible? Check out our pricing section for more details! More importantly, help us give power back to the students to eat what you want at a fair and reasonable price!</p>
+            </br><a href="/static_pages/pricing"><button type="button" class="btn btn-info btn-lg left-align">See Pricing &raquo;</button></a>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <hr>
+    </div>
+    <!-- /.container -->
+
+    <%= render 'shared/footer' %>

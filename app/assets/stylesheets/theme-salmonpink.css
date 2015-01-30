@@ -400,12 +400,12 @@ blockquote {
   line-height: 70px;
 }
 .cbp-af-header h1 {
-  text-transform: uppercase;
   color: white;
   letter-spacing: 4px;
   font-size: 2em;
   margin: 0.9em 0;
   float: left;
+  font-family: Montserrat;
 }
 .cbp-af-header h1 a {
   color: inherit;
