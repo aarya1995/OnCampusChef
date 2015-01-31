@@ -21,13 +21,7 @@ Oncampuschef::Application.routes.draw do
   resources :homestyle
   resources :budget
 
-  match '/EatSmart', to: 'end_users#menu1', via: 'get'
-  match '/AsianFusion', to: 'end_users#AsianFusion', via: 'get'
-  match '/SouthAsian', to: 'end_users#SouthAsian', via: 'get'
-  match '/AmericanDelight', to: 'end_users#AmericanDelight', via: 'get'
-  match '/ClassicLiving', to: 'end_users#ClassicLiving', via: 'get'
-  match '/SpecialtySandwiches', to: 'end_users#SpecialtySandwiches', via: 'get'
-  match '/bodybuilding', to: 'end_users#bodybuilding', via: 'get'
+ 
   match '/chefs', to: 'static_pages#chefs', via: 'get'
   match '/profile', to: 'customers#show', via: 'get'
 
