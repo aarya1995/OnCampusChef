@@ -8,7 +8,7 @@ class VegetarianController < ApplicationController
 
 	def create
 		@order = current_customer.orders.build(order_params)
-		@order.mealplan = "vegetarian"
+		@order.mealplan = "Vegetarian"
 
 		respond_to do |format|
 			if @order.save
