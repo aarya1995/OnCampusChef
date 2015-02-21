@@ -221,7 +221,7 @@ ul.unstyled {
 }
 
 .profile-page {
-	background-color: #eee;
+	background-color: white;
 }
 
 .btn-label {position: relative;left: -12px;display: inline-block;padding: 6px 12px;background: rgba(0,0,0,0.15);border-radius: 3px 0 0 3px;}
@@ -313,6 +313,15 @@ ul.unstyled {
 
 }
 
+.post-content3 {
+    top:0;
+    left:0;
+    position: absolute;
+    margin-left: 16%;
+    margin-top: 32%;
+
+}
+
 .panel-image {
 	position:relative;
 }
@@ -345,4 +354,16 @@ ul.unstyled {
 	width: 160px;
 	height: 240px;
 }
+
+/* About page banner */
+
+.business-header {
+    height: 200px;
+    background: url('http://placehold.it/1920x400') center center no-repeat scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
 

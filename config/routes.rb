@@ -11,6 +11,7 @@ Oncampuschef::Application.routes.draw do
   get "static_pages/athlete"
   get "static_pages/homestyle"
   get "static_pages/budget"
+  get "static_pages/vegetarian"
 
   resources :end_users
   resources :pot_users
@@ -20,6 +21,7 @@ Oncampuschef::Application.routes.draw do
   resources :athlete
   resources :homestyle
   resources :budget
+  resources :vegetarian
 
  
   match '/chefs', to: 'static_pages#chefs', via: 'get'
