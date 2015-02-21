@@ -19,6 +19,8 @@ class OrdersController < ApplicationController
 			
 		elsif params[:budget_button]
 			@order.mealplan = "budget"
+		elsif params[:vegetarian_button]
+			@order.mealplan = "vegetarian"
 			
 		end
 
