@@ -1,0 +1,169 @@
+<% provide(:title, 'Catering') %>
+
+   <%= render 'shared/header' %>
+   
+   <header class="business-header">
+       <% flash.each do |key, value| %>
+    <%= content_tag(:div, value, class: "alert alert-#{key}") %>
+<% end %>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    
+                </div>
+            </div>
+        </div>
+    </header>
+    
+   <!-- Page Content -->
+    <div class="container" style="margin-top: 2%;">
+
+    	<div class="row">
+            <div class="col-sm-6">
+                <h2 class = "text-center">Catering</h2>
+                <hr>
+                <p style=" font-family: Arial; font-size: 1.1em;" class= "text-center">Are you a club looking to have some tasty food at your interest meeting to recruit some cool new people? Part of a fraternity or sorority and want to class up your next chapter meeting with some glazed kielbasa pineapple bites? Perhaps you are a veteran sports team/club and you want to get your pre-game munchies knocked out with an incredible pasta night?
+				</p>
+
+                <p style=" font-family: Arial; font-size: 1.1em;" class="text-center">Try OnCampusChef on-site catering! We will send our chef to your venue to cater crowds up to 50 people! No more mini pretzels in a bowl or boring deli platters. Let OnCampusChef help you make your regular meetups memorable.</p>
+
+                </br>
+            </div>
+
+            <div class ="col-sm-6">
+
+              <!-- Start of form -->
+
+
+        <!-- panel preview -->
+        <div class="col-sm-12">
+            <h4>Fill out order:</h4>
+            <div class="panel panel-default">
+              <%= form_for(@catOrder) do |f| %>
+          <% if @catOrder.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(@catOrder.errors.count, "error") %> prohibited this order from being saved:</h2>
+
+              <ul>
+              <% @catOrder.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+              <% end %>
+              </ul>
+            </div>
+          <% end %>
+                <div class="panel-body form-horizontal payment-form">
+
+                  <div class="form-group">
+
+                      <div style="margin-left: 5%;">
+                        <p>
+                 Name:
+              </p>
+              </div>
+            
+               <div class="col-sm-12">
+                <%= f.text_field :name, class: 'form-control' %>
+            </div>
+              <span class="help-block"></span>
+          </div>
+
+             <div class="form-group">
+
+                      <div style="margin-left: 5%;">
+                        <p>
+                 Email:
+              </p>
+              </div>
+            
+               <div class="col-sm-12">
+                <%= f.text_field :email, class: 'form-control' %>
+            </div>
+              <span class="help-block"></span>
+          </div>
+
+             <div class="form-group">
+
+                      <div style="margin-left: 5%;">
+                        <p>
+                 Please enter the best two phone numbers to reach you, separated by commas:
+              </p>
+              </div>
+            
+               <div class="col-sm-12">
+                <%= f.text_field :phone, class: 'form-control' %>
+            </div>
+              <span class="help-block"></span>
+          </div>
+
+             <div class="form-group">
+
+                      <div style="margin-left: 5%;">
+                        <p>
+                 Lets us know a good time to contact you during the day:
+              </p>
+              </div>
+            
+               <div class="col-sm-12">
+                <%= f.text_field :availability, class: 'form-control' %>
+            </div>
+              <span class="help-block"></span>
+          </div>
+
+             <div class="form-group">
+
+                      <div style="margin-left: 5%;">
+                        <p>
+                 Address:
+              </p>
+              </div>
+            
+               <div class="col-sm-12">
+                <%= f.text_field :address, class: 'form-control' %>
+            </div>
+              <span class="help-block"></span>
+          </div>
+
+             <div class="form-group">
+
+                      <div style="margin-left: 5%;">
+                        <p>
+                 Name of your organization:
+              </p>
+              </div>
+            
+               <div class="col-sm-12">
+                <%= f.text_field :organization, class: 'form-control' %>
+            </div>
+              <span class="help-block"></span>
+          </div>
+
+                
+
+
+
+                  
+            <div class="actions">
+              <%= f.submit 'Submit', class: 'btn btn-info'%>
+            </div>
+
+          </br>
+
+            <p style="color:red;">*We will have one of our representatives contact you at your convenience within 24 hours. Price on request</p>
+
+                </div>
+
+            </div>  
+            <% end %>         
+        </div>
+
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <hr>
+
+
+    </div>
+    <!-- /.container -->
+
+    <%= render 'shared/footer' %>

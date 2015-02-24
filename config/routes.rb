@@ -22,10 +22,12 @@ Oncampuschef::Application.routes.draw do
   resources :homestyle
   resources :budget
   resources :vegetarian
+  resources :catering_orders
 
  
   match '/chefs', to: 'static_pages#chefs', via: 'get'
   match '/profile', to: 'customers#show', via: 'get'
+  match '/catering', to: 'catering_orders#new', via: 'get'
 
   get 'pages/index' => 'high_voltage/pages#show', id: 'index'
 

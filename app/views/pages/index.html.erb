@@ -113,6 +113,38 @@
     </section>
 
 
+    <!-- Testimonials
+    ================================================== -->
+    <section id="testimonials" class="dark">
+
+      <div class="page-header text-center">
+        <h3>Testimonials</h3>
+        <h2>Our Clients Love Us</h2>
+      </div>
+
+      <div class="container">
+
+        <div class='row'>
+          <div class='col-md-offset-2 col-md-8'>
+             <blockquote>
+                    <div class="row">
+                      <div class="col-sm-3 text-center">
+                        <img class="img-circle" src="/assets/steve_pic.jpg">
+                      </div>
+                      <div class="col-sm-9">
+                        <p>"I save a lot of time not worrying about cooking. Best part is, I eat healthier and end up saving money using OnCampusChef!"</p>
+                        <small>Steve Jettoo -  <a class="icon" href="https://www.facebook.com/steven.jettoo?fref=ts" target="_blank"><i class="fa fa-facebook fa-2x"></i></a></small>
+                      </div>
+                    </div>
+              </blockquote>                        
+          </div>
+        </div>
+        </div>
+      </div>
+
+    </section>
+
+
     <section id="pricing" class="featured">
 
       <div class="container">
@@ -121,10 +153,10 @@
                     <h3>What are you waiting for?</h3>
 
                     <% if signed_in? %>
-                      <a href= "/static_pages/chefs" class="btn btn-lg btn-light">Order Now</a>
+                      <a href= "/static_pages/chefs" class="btn btn-lg btn-dark">Order Now</a>
                     <% else %>
-                     <%= link_to('Sign Up Today!', new_customer_session_path, class: 'btn btn-lg btn-light', role: 'button')  %>
-                    <a href="/consultations/new" class="btn btn-lg btn-dark">Get a Free Consultation!</a>
+                     <%= link_to('Sign Up Today!', new_customer_session_path, class: 'btn btn-lg btn-primary', role: 'button')  %>
+                    <a href="/consultations/new" class="btn btn-lg btn-default">Get a Free Consultation!</a>
                     <% end %>
                 </div>
             </div>
