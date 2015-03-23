@@ -68,6 +68,6 @@
   $(document).on('ready page:change', function() {
     console.log('page loaded');
     analytics.page();
-    analytics.trackForm($('#new-user'), 'Signed Up');
+    analytics.trackForm($('#new_customer'), 'Signed Up');
     analytics.trackForm($('#new_contact'), 'Contact Request');
   })
