@@ -69,5 +69,9 @@
     console.log('page loaded');
     analytics.page();
     analytics.trackForm($('#new_customer'), 'Signed Up');
-    analytics.trackForm($('#new_contact'), 'Contact Request');
+    analytics.trackForm($('#new_athlete_order'), 'New Athlete Order');
+    analytics.trackForm($('#new_homestyle_order'), 'New Homestyle Order');
+    analytics.trackForm($('#new_healthyliving_order'), 'New HealthyLiving Order');
+    analytics.trackForm($('#new_budget_order'), 'New Budget Order');
+    analytics.trackForm($('#new_vegetarian_order'), 'New Vegetarian Order');
   })
