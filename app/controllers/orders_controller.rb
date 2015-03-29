@@ -1,8 +1,9 @@
 class OrdersController < ApplicationController
-	before_filter :authenticate_customer!
+	before_filter :authenticate_customer!, :only => [:new]
 
+    #need to handle case for when user goes straight to order form url
 	def new
-		@order = Order.new
+	  	@order = Order.new
 	end
 
 	def create
