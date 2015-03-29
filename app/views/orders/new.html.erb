@@ -36,19 +36,18 @@
                     <div class="form-group">
 
                     	<div style="margin-left: 5%;">
-	                    	<p>
-						     Please enter the number of up to three food items, separated by commas, from the athlete menu:
-						 	</p>
 
-						 	<ol>
-						 	 <li>Chicken breast with brown rice</li>
-						     <li>Tilapia with broccoli</li>
-						     <li>Sweet potato with lemon chicken</li>
-						     <li>Chicken salad with quinoa</li>
-						     <li>Chicken breast with cous cous </li>
-						     <li>Tilapia with brown rice</li>
-
-						 	</ol>
+                    		<% if $mealplan.eql? "athlete" %>
+	                    	  <%= render 'shared/athlete' %>
+						 	<% elsif $mealplan.eql? "healthyliving" %>
+						 	  <%= render 'shared/healthyliving' %>
+						 	<% elsif $mealplan.eql? "homestyle" %>
+						 	  <%= render 'shared/homestyle' %>
+						 	<% elsif $mealplan.eql? "budget" %>
+						 	  <%= render 'shared/budget' %>
+						 	<% elsif $mealplan.eql? "vegetarian" %>
+						 	  <%= render 'shared/vegetarian' %>
+                            <% end %>
 					    </div>
 					</br>
 					     <div class="col-sm-12">

@@ -8,7 +8,7 @@ Oncampuschef::Application.routes.draw do
   get "static_pages/chefs"
   get "static_pages/test_page"
   get "static_pages/healthyliving"
-  get "static_pages/athlete"
+  #get "static_pages/athlete"
   get "static_pages/homestyle"
   get "static_pages/budget"
   get "static_pages/vegetarian"
@@ -17,13 +17,18 @@ Oncampuschef::Application.routes.draw do
   resources :pot_users
   resources :consultations
   resources :healthy_living
-  resources :orders
+  resources :orders, :except => [:show]
   resources :athlete
   resources :homestyle
   resources :budget
   resources :vegetarian
   resources :catering_orders
 
+  get "orders/athlete" => "orders#athlete"
+  get "orders/healthyliving" => "orders#healthyliving"
+  get "orders/homestyle" => "orders#homestyle"
+  get "orders/budget" => "orders#budget"
+  get "orders/vegetarian" => "orders#vegetarian"
  
   match '/chefs', to: 'static_pages#chefs', via: 'get'
   match '/profile', to: 'customers#show', via: 'get'

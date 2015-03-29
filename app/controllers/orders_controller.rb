@@ -8,22 +8,17 @@ class OrdersController < ApplicationController
 	def create
 		@order = current_customer.orders.build(order_params)
 
-		if params[:athlete_button]
+		if $mealplan.eql? "athlete"
 			@order.mealplan = "athlete"
-			
-		elsif params[:healthy_button]
-			@order.mealplan = "healthy living"
-			
-		elsif params[:homestyle_button]
-			@order.mealplan = "home style"
-			
-		elsif params[:budget_button]
+		elsif $mealplan.eql? "healthyliving"
+			@order.mealplan = "healthyliving"
+		elsif $mealplan.eql? "homestyle"
+			@order.mealplan = "homestyle"
+		elsif $mealplan.eql? "budget"
 			@order.mealplan = "budget"
-		elsif params[:vegetarian_button]
+		elsif $mealplan.eql? "vegetarian"
 			@order.mealplan = "vegetarian"
-			
-		end
-
+	    end 
 
 		respond_to do |format|
 
@@ -32,30 +27,33 @@ class OrdersController < ApplicationController
 				format.html { redirect_to '/profile' }
         		format.js
 			else
-
-				if @order.mealplan.eql? "athlete"	
-					format.html { redirect_to new_athlete_path }
+	            format.html { render action: 'new' }
 			        
-			        # added: not working after adding redirects
-			        format.js   { render json: @order.errors, status: :unprocessable_entity }
-			    elsif @order.mealplan.eql? "budget"	
-					format.html { redirect_to new_budget_path }
-			        
-			        # added: not working after adding redirects
-			        format.js   { render json: @order.errors, status: :unprocessable_entity }
-			    elsif @order.mealplan.eql? "home style"	
-					format.html { redirect_to new_homestyle_path }
-			        
-			        # added:
-			        format.js   { render json: @order.errors, status: :unprocessable_entity }
-			    elsif @order.mealplan.eql? "healthy living"	
-					format.html { redirect_to new_healthy_living_path }
-			        
-			        # added:
-			        format.js   { render json: @order.errors, status: :unprocessable_entity }
-			    end
+			    # added: not working after adding redirects
+			    format.js   { render json: @order.errors, status: :unprocessable_entity }
+			   
 			end
 		end
+	end
+
+	def athlete
+		$mealplan = "athlete"
+	end
+
+	def healthyliving
+		$mealplan = "healthyliving"
+	end
+
+	def homestyle
+		$mealplan = "homestyle"
+	end
+
+	def budget
+		$mealplan = "budget"
+	end
+
+	def vegetarian
+		$mealplan = "vegetarian"
 	end
 
 	def order_params
