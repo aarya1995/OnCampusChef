@@ -17,3 +17,12 @@
 
 # Ignore omniauth initializers
 /config/initializers/omniauth.rb
+
+.DS_Store
+.DS_Store
+
+app/.DS_Store
+
+app/views/.DS_Store
+
+app/views/pages/.DS_Store
