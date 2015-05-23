@@ -6,12 +6,7 @@ Oncampuschef::Application.routes.draw do
   get "static_pages/about"
   get "static_pages/about_us"
   get "static_pages/chefs"
-  get "static_pages/test_page"
-  get "static_pages/healthyliving"
-  #get "static_pages/athlete"
-  get "static_pages/homestyle"
-  get "static_pages/budget"
-  get "static_pages/vegetarian"
+ 
 
   resources :end_users
   resources :pot_users

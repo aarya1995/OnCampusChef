@@ -60,5 +60,6 @@ class OrdersController < ApplicationController
 	def order_params
 		params.require(:order).permit(:food_items, :group, :contact_info)
 	end
+
 end
 

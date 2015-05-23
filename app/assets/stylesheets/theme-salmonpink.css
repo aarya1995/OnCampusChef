@@ -67,10 +67,10 @@ body {
   border-left: 2em solid #4aa1db;
 }
 .style-switcher li:nth-child(3) {
-  border-left: 8px solid #e3695c;
+  border-left: 8px solid #FF6600;
 }
 .style-switcher li:nth-child(3):hover {
-  border-left: 2em solid #e3695c;
+  border-left: 2em solid #FF6600;
 }
 .style-switcher li:nth-child(4) {
   border-left: 8px solid #ffba43;
@@ -105,10 +105,10 @@ p {
   line-height: 1.75;
 }
 a {
-  color: #e3695c;
+  color: #FF6600;
 }
 a:hover {
-  color: #e3695c;
+  color: #FF6600;
   text-decoration: underline;
 }
 blockquote {
@@ -118,10 +118,10 @@ blockquote {
   color: white !important;
 }
 .highlight {
-  color: #e3695c;
+  color: #FF6600;
 }
 .vertical-align {
-  margin: 100px 0;
+  margin: 50px 0 30px 0; /* responsible for wide margins in orange row */
 }
 .vertical-align.no-bottom {
   margin-bottom: 0;
@@ -140,8 +140,8 @@ blockquote {
 }
 .btn.btn-empty {
   background: none !important;
-  border: 2px solid #e3695c;
-  color: #e3695c !important;
+  border: 2px solid #FF6600;
+  color: #FF6600 !important;
 }
 .btn.btn-empty:hover {
   background-color: rgba(0, 0, 0, 0.03) !important;
@@ -320,7 +320,7 @@ blockquote {
   padding: 1em 0;
 }
 .navbar .navbar-nav .current > a {
-  color: #e3695c !important;
+  color: #FF6600 !important;
 }
 .navbar .nav > li > a:hover,
 .navbar .nav > li > a:focus {
@@ -340,7 +340,7 @@ blockquote {
   font-size: 0.9em;
 }
 .navbar .nav > li ul .dropdown-header {
-  color: #e3695c;
+  color: #FF6600;
 }
 .navbar-brand,
 .navbar-nav > li > a {
@@ -416,7 +416,7 @@ blockquote {
 }
 .cbp-af-header .nav li.open > a {
   background: none;
-  color: #e3695c;
+  color: #FF6600;
 }
 .cbp-af-header .nav li ul a {
   color: #333333;
@@ -432,10 +432,10 @@ blockquote {
   text-transform: uppercase;
 }
 .cbp-af-header .nav a.signup {
-  color: #e3695c !important;
+  color: #FF6600 !important;
 }
 .cbp-af-header .nav a:hover {
-  color: #e3695c;
+  color: #FF6600;
   background: none;
 }
 /* Transitions and class for reduced height */
@@ -566,10 +566,10 @@ blockquote {
   border-radius: 4px;
 }
 .login-part input:focus {
-  border-color: #e3695c;
+  border-color: #FF6600;
 }
 .login-part button[type='submit'] {
-  background: #e3695c;
+  background: #FF6600;
   padding: 17px;
 }
 .login-part button[type='submit']:hover {
@@ -594,7 +594,7 @@ blockquote {
   padding: 0 1.5em;
 }
 .login-part p.disclaimer a {
-  color: #e3695c;
+  color: #FF6600;
 }
 #signup .login-part {
   height: 362px;
@@ -1223,7 +1223,7 @@ section .login-overlay {
 #intro-video .carousel-caption-center .btn {
   margin: 1em 0;
   padding: 1em 2em;
-  background: #e3695c;
+  background: #FF6600;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
@@ -1262,7 +1262,7 @@ section .login-overlay {
 #intro-video .carousel-caption-left .btn {
   margin: 1em 0;
   padding: 1em 2em;
-  background: #e3695c;
+  background: #FF6600;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
@@ -1276,7 +1276,7 @@ section .login-overlay {
   left: 0;
   right: 0;
   bottom: 0;
-  opacity: 0.5;
+  opacity: 0.3;
   background: rgba(0, 0, 0, 0.5);
   background: -webkit-radial-gradient(50% 55%, ellipse closest-corner, rgba(0, 0, 0, 0.57) 1%, rgba(0, 0, 0, 0.8) 100%);
   background: -moz-radial-gradient(50% 55%, ellipse closest-corner, rgba(0, 0, 0, 0.57) 1%, rgba(0, 0, 0, 0.8) 100%);
@@ -1498,7 +1498,7 @@ section h3 {
   font-size: 1em;
   font-weight: 600;
   text-transform: uppercase;
-  color: #e3695c;
+  color: #FF6600;
   letter-spacing: 1px;
 }
 section p {
@@ -1522,7 +1522,7 @@ section.dark {
 section.dark.with-bg {
   color: #2b2d35;
   /* added by Abhas 01-28-2015 */
-  background: URL("/assets/cooking_banner.jpg") center center no-repeat;
+  background: #FFA319;
   background-size: cover;
 }
 section.dark h1,
@@ -1586,12 +1586,12 @@ section.cta p:last-child {
   padding-bottom: 0;
 }
 section.cta .btn {
-  background: #e3695c;
+  background: #FF6600;
   color: white;
   padding: 0.5em 2em;
   font-size: 1em;
   margin: 0 1em;
-  border: 2px solid #e3695c;
+  border: 2px solid #FF6600;
   text-transform: uppercase;
 }
 section.cta .btn:hover {
@@ -1696,7 +1696,7 @@ section .overlay-text {
   margin: 2em 0;
 }
 #pricing .plan .plan-cta .plan-buy .btn {
-  background: #e3695c;
+  background: #FF6600;
   padding: 10px 30px;
   font-size: 1em;
   font-weight: 300;
@@ -1755,10 +1755,10 @@ section .overlay-text {
   content: '';
 }
 #testimonials .carousel blockquote a {
-  color: #e3695c;
+  color: #FF6600;
 }
 #testimonials .carousel blockquote a:hover {
-  color: #e3695c;
+  color: #FF6600;
   text-decoration: underline;
 }
 #portfolio .portfolio-item {
@@ -1848,7 +1848,7 @@ section .overlay-text {
   line-height: 35px;
   border: 1px solid #fff;
   border-radius: 50%;
-  color: #e3695c;
+  color: #FF6600;
   text-decoration: none;
 }
 .grid figcaption a.preview {
@@ -2004,7 +2004,7 @@ section .overlay-text {
   padding: 1em 0;
 }
 .contact-form footer button {
-  background: #e3695c;
+  background: #FF6600;
   border-radius: 4px;
   border: 0;
   color: white;
@@ -2041,7 +2041,7 @@ footer.footer .footer-logo a {
   color: #C9CACC;
 }
 footer.footer .footer-logo a:hover {
-  color: #e3695c;
+  color: #FF6600;
   text-decoration: none;
 }
 footer.footer h2 {
@@ -2068,7 +2068,7 @@ footer.footer ul li a {
   color: #C9CACC;
 }
 footer.footer ul li a:hover {
-  color: #e3695c;
+  color: #FF6600;
   text-decoration: none;
 }
 footer.footer .copyright {
@@ -2095,13 +2095,13 @@ footer.footer .icon {
   font-size: 1em;
 }
 .icon:hover {
-  color: #e3695c;
+  color: #FF6600;
 }
 .icons .icon-wrapper {
   width: 140px;
   height: 140px;
   border-radius: 50%;
-  background-color: rgba(228, 107, 94, 0.4);
+  background-color: rgba(255, 131, 48, 0.5);
   text-align: center;
   margin: 2em auto 0;
   padding: 3em 0;
@@ -2276,7 +2276,7 @@ footer.footer .icon {
   box-shadow: 0px 0px 0px 2px #b5cd60;
 }
 .modal-form input[type="submit"] {
-  background: #e3695c;
+  background: #FF6600;
   border: 0;
   color: white;
   font-weight: bold;
