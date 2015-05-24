@@ -1,0 +1,19 @@
+<%= render 'shared/header' %>
+
+<div class="container menu-container">
+	<% @food.each do |food| %>
+		<div class = "col-md-4 col-lg-4 col-sm-12 food_info">
+			<img src="<%= food.imageurl %>">
+
+			<p><%= food.name %> - $<%= food.price %></p>
+			<p><%= food.description %></p>
+
+		</div>
+	<% end %>
+</div>
+
+
+
+
+
+<%= render 'shared/footer' %>

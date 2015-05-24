@@ -19,11 +19,15 @@ Oncampuschef::Application.routes.draw do
   resources :vegetarian
   resources :catering_orders
 
+
   get "orders/athlete" => "orders#athlete"
   get "orders/healthyliving" => "orders#healthyliving"
   get "orders/homestyle" => "orders#homestyle"
   get "orders/budget" => "orders#budget"
   get "orders/vegetarian" => "orders#vegetarian"
+
+
+  get "food_objects/menu"
  
   match '/chefs', to: 'static_pages#chefs', via: 'get'
   match '/profile', to: 'customers#show', via: 'get'
