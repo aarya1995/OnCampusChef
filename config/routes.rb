@@ -6,6 +6,7 @@ Oncampuschef::Application.routes.draw do
   get "static_pages/about"
   get "static_pages/about_us"
   get "static_pages/chefs"
+  get "temp_order/order"
  
 
   resources :end_users
