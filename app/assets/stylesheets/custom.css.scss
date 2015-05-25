@@ -369,14 +369,20 @@ ul.unstyled {
 /* for products page */
 
 .food_info {
-	margin-bottom: 7%;
+	img {
+		height: 253px;
+		width: 300px;
+    }
+}
+
+.food_info {
+	margin-bottom: 4%;
 
 
 }
 
 
 .menu-container {
-	margin-left: 4%;
 	margin-top: 4%;
 	margin-bottom: 3%;
 }
