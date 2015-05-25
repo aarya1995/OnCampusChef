@@ -8,7 +8,7 @@ development:
   encoding: unicode
   database: oncampuschef_development
   pool: 5
-  username: Daniel
+  username: abhasarya
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -18,11 +18,11 @@ test:
   encoding: unicode
   database: oncampuschef_development
   pool: 5
-  username: Daniel
+  username: abhasarya
 
 production:
   adapter: postgresql
   encoding: unicode
   database: oncampuschef_production
   pool: 5
-  username: Daniel
+  username: abhasarya
