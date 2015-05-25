@@ -2,43 +2,22 @@
 
 <div class="container menu-container">
 	
-		<select multiple="multiple" data-limit="3" class="image-picker show-labels limit_callback show-html">
 			<% @food.each do |food| %>
 				<div class = "col-md-4 col-lg-4 col-sm-12 food_info">
 					
-					<option data-img-src="<%= food.imageurl %>" value="<%= food.id %>"> <%= food.name %> - $<%= food.price %>  </option>
+					<img src= "<%= food.imageurl %>"/>
+
+					<p><%= food.name %> - $<%= food.price %></p>  
 
 					
 					<p><%= food.description %></p>
 
 				</div>
 			<% end %>
-		</select>
-
-
-	    <form action="" method="POST" id="togglee">
-		  <script
-		    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-		    data-key="pk_test_6pRNASCoBOKtIshFeQd4XMUh"
-		    data-amount="2000"
-		    data-name="Demo Site"
-		    data-description="2 widgets ($20.00)"
-		    data-image="/128x128.png">
-		  </script>
-		</form>
+		
 </div>
 
-<script>
-	document.getElementById("togglee").style.display="none";
-	var hidden = true;
-	$("select").imagepicker({
-		show_label: true,
-		limit_reached: function(){
-			document.getElementById("togglee").style.display="block";
-		}
-		
-	})
-</script>
+
 
 
 <%= render 'shared/footer' %>
