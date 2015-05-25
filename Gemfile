@@ -69,6 +69,11 @@ gem 'stripe'
 gem 'redis', '~> 3.0.1'
 gem 'hiredis', '~> 0.4.5'
 
+
+# These two gems are for datetimepicker
+gem 'momentjs-rails', '>= 2.8.1'
+gem 'bootstrap3-datetimepicker-rails', '~> 4.0.0'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
