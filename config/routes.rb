@@ -6,7 +6,8 @@ Oncampuschef::Application.routes.draw do
   get "static_pages/about"
   get "static_pages/about_us"
   get "static_pages/chefs"
-  get "temp_order/order"
+  get "temp_order/order" # This is to be deleted later 
+  get "orders/order"
  
 
   resources :end_users
@@ -26,7 +27,6 @@ Oncampuschef::Application.routes.draw do
   get "orders/homestyle" => "orders#homestyle"
   get "orders/budget" => "orders#budget"
   get "orders/vegetarian" => "orders#vegetarian"
-
 
   get "food_objects/menu"
  
