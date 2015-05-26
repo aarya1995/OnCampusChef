@@ -3,7 +3,7 @@
 
  <div class="container" style= "margin-top: 4%; margin-bottom: 7%;">
  	<div class="row">
- 		<form action="/orders#price" id="demo-form" method="POST" data-parsley-validate >
+ 		<form action="<%=orders_path%>" id="demo-form" method="POST" data-parsley-validate >
  		  <!-- pick food items -->
 		  <div class="first block1 show">
 		   	<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
@@ -14,10 +14,12 @@
 
 					<input type="checkbox" style="display:inline;" onclick="toggle_visibility('quantity<%=i%>');"/>	
 					<select name="<%= food.name %>" style="display:none;" class="quantity" id="quantity<%=i%>" data-parsley-group="block1" required/>
-						<option value="1">1</option>
-						<option value="2">2</option>
-						<option value="3">3</option>
-						<option value="4">4</option>
+						<% j = 0 %>
+						<% while j < 25 %>
+						<option value="<%=j%>"><%=j%></option>
+						<% j = j + 1 %>
+						<% end %>
+
 					</select> 
 					<li class="menu-object"><%= food.name %></li>
 					<% i = i + 1 %>
