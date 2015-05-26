@@ -6,17 +6,9 @@ Oncampuschef::Application.routes.draw do
   get "static_pages/about"
   get "static_pages/about_us"
   get "static_pages/chefs"
-<<<<<<< HEAD
-  get "orders/order"
-  get "orders/pay"
-=======
   get "static_pages/test"
   get "static_pages/test2"
 
-  get "temp_order/order" # This is to be deleted later 
-  
- 
->>>>>>> upstream/master
 
   resources :charges
   resources :end_users
