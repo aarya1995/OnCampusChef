@@ -65,7 +65,7 @@ group :production do
 end
 
 gem 'stripe'
-
+gem "parsley-rails"
 gem 'redis', '~> 3.0.1'
 gem 'hiredis', '~> 0.4.5'
 

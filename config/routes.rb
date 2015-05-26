@@ -9,10 +9,8 @@ Oncampuschef::Application.routes.draw do
   get "static_pages/test"
   get "static_pages/test2"
 
-  get "temp_order/order" # This is to be deleted later 
-  
- 
 
+  resources :charges
   resources :end_users
   resources :pot_users
   resources :consultations
@@ -23,7 +21,6 @@ Oncampuschef::Application.routes.draw do
   resources :budget
   resources :vegetarian
   resources :catering_orders
-
 
   get "orders/athlete" => "orders#athlete"
   get "orders/healthyliving" => "orders#healthyliving"
