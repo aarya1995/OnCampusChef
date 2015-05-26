@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150525025003) do
+ActiveRecord::Schema.define(version: 20150526002308) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -120,8 +120,8 @@ ActiveRecord::Schema.define(version: 20150525025003) do
     t.string   "contact_info"
     t.text     "food_items"
     t.string   "address"
-    t.date     "appointment_date"
     t.string   "status"
+    t.text     "appointment_date"
   end
 
   add_index "orders", ["customer_id"], name: "index_orders_on_customer_id", using: :btree

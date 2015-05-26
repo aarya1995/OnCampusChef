@@ -1,0 +1,157 @@
+
+ <%= render 'shared/header' %>
+
+ <div class="container" style= "margin-top: 4%; margin-bottom: 7%;">
+ 	<div class="row">
+ 		<form action="/orders/price" id="demo-form" method="POST" data-parsley-validate>
+ 		  <!-- pick food items -->
+		  <div class="first block1 show">
+		   
+			<div class="row">
+				<ol class="test-menu">
+					<% i = 0 %>
+					<% @food_items.each do |food| %>
+
+					<input type="checkbox" style="display:inline;" onclick="toggle_visibility('quantity<%=i%>');"/>	
+					<select name="<%= food.name %>" style="display:none;" class="quantity" id="quantity<%=i%>" data-parsley-group="block1" required/>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+					</select> 
+					<li class="menu-object"><%= food.name %></li>
+					<% i = i + 1 %>
+					<% end %>
+				</ol>
+			</div>
+
+
+			<script>
+				function toggle_visibility(id) {
+
+					var e = document.getElementById(id);
+
+					if(e.style.display == 'inline-block')
+						e.style.display = 'none';
+					else
+						e.style.display = 'inline-block';
+				}
+			</script>
+
+
+
+		    <span class="next btn btn-info" data-current-block="1" data-next-block="2">Next ></span>
+		  </div>
+
+
+
+		  <!-- schedule appointment -->
+		  <div class="second block2 hidden">
+		   	<div class="row shit">
+				<div class="col-md-4">
+				</div>
+				<div class="col-md-4">
+					<div class="center-block">
+					<h1>
+						Pick a Date and Time
+					</h1>
+					<div class="form-group">
+						<div class='input-group date' id='datetimepicker1'>
+						<input type="text" class="form-control" name="date" data-parsley-group="block2" required />
+			        	<span class="input-group-addon">
+			           	<span class="glyphicon glyphicon-calendar"></span>
+			        	</span>
+						</div>
+					</div>
+					</div>
+
+				<script type="text/javascript">
+					$(function () {
+						$('#datetimepicker1').datetimepicker({
+						sideBySide: true,
+						});
+					});
+				</script>
+
+				</div>
+				<div class="col-md-4">
+				</div>
+			</div>
+
+		    <span class="next btn btn-info pull-left" data-current-block="2" data-next-block="1">< Previous</span>
+		    <span class="next btn btn-info" data-current-block="2" data-next-block="3">Next ></span>
+		 </div>
+
+
+
+		  <!-- enter contact info -->
+		  <div class="third block3 hidden">
+		    <div class="row shit">
+				<div class="col-md-4">
+				</div>
+				<div class="col-md-4">
+					<div class="center-block">
+						<h1>Enter Address and Phone Number</h1>
+						<div class="input-group">
+			  			<span class="input-group-addon" id="basic-addon1">Address: </span>
+			 	 		<input type="text" class="form-control" placeholder="100 Hungry Lane" aria-describedby="basic-addon1" name="Address" data-parsley-group="block3" required />
+						</div>
+						<div class="input-group">
+			  			<span class="input-group-addon" id="basic-addon1">Phone</span>
+			 	 		<input type="text" class="form-control" placeholder="555-555-5555" aria-describedby="basic-addon1" name="phone" data-parsley-group="block3" required>
+						</div>
+		   			</div>
+		   		</div>
+		   		<div class="col-md-4">
+				</div>
+
+		    <span class="next btn btn-info pull-left" data-current-block="3" data-next-block="2">< Previous</span>
+		    <span class="next btn btn-info" data-current-block="3" data-next-block="4">Next ></span>
+		    </div>
+		  </div>
+
+		
+
+		  <!-- enter payment info -->
+		  <div class="fourth block4 hidden">
+		    <label for="fullname">Email:</label>
+		    <input type="text" name="fullname" required  data-parsley-type="email" data-parsley-group="block4" />
+
+		    <span class="next btn btn-info pull-left" data-current-block="4" data-next-block="3">< Previous</span>
+		    <input type="submit" class="btn btn-default" />
+		  </div>
+		</form>
+
+	</div>
+</div>
+
+<script type="text/javascript">
+$(document).ready(function () {
+  $('.next').on('click', function () {
+    var current = $(this).data('currentBlock'),
+      next = $(this).data('nextBlock');
+
+    // only validate going forward. If current group is invalid, do not go further
+    // .parsley().validate() returns validation result AND show errors
+    if (next > current)
+      if (false === $('#demo-form').parsley().validate('block' + current))
+        return;
+
+    // validation was ok. We can go on next step.
+    $('.block' + current)
+      .removeClass('show')
+      .addClass('hidden');
+
+    $('.block' + next)
+      .removeClass('hidden')
+      .addClass('show');
+
+  });
+});
+</script>
+
+
+
+
+	
+ <%= render 'shared/footer' %>

@@ -13,7 +13,6 @@
  *= require_tree .
  *= require bootstrap-datetimepicker
  */
-
  #signup {
  	margin: auto;
  	width: 60%;
