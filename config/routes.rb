@@ -10,7 +10,7 @@ Oncampuschef::Application.routes.draw do
   get "static_pages/test2"
 
 
-  resources :charges
+  resources :charges, :except => [:show]
   resources :end_users
   resources :pot_users
   resources :consultations
