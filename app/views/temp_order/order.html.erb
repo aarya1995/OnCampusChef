@@ -1,41 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
- 
+	<%= render 'shared/header' %>
 	<style> body {background-color:lightgray} </style>
+	<div>
 
-	<div class="container">
-
-		<div class="row shit">
-			<div class="col-md-4">
-			</div>
-			<div class="col-md-4">
-				<div class="center-block">
-
-					<h1 class="center-text">
-						Select Number of Meals
-					</h1>
-					<div class = "slid">
-						<input id="ex8" data-slider-id='ex1Slider' type="text" data-slider-min="6" data-slider-max="24" data-slider-step="2" data-slider-value="6"/>
-
-						
-
-						<script>
-							$("#ex8").slider({tooltip: 'hide'})
-							$("#ex8").on("slide", function(slideEvt) {
-								$("#ex6SliderVal").text(slideEvt.value);
-							});
-						</script>
-
-					</div>
-					<div>
-						<h1 class = "center-text" id="ex6SliderVal">6</h1>
-					</div>
-					<div>
-						<a href="#" class="btn btn-block btn-lg btn-primary"> Next <i class="fa fa-arrow-right order-arrow"></i></a>
-					</div>
-			</div>
-			<div class="col-md-4">
-			</div>
-		</div>
 	</div>	
+	<%= render 'shared/footer' %>
 </html>

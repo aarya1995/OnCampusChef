@@ -6,10 +6,11 @@ Oncampuschef::Application.routes.draw do
   get "static_pages/about"
   get "static_pages/about_us"
   get "static_pages/chefs"
-  get "temp_order/order" # This is to be deleted later 
-  get "orders/order"
- 
+  get "static_pages/test"
+  get "static_pages/test2"
 
+
+  resources :charges
   resources :end_users
   resources :pot_users
   resources :consultations
@@ -21,12 +22,12 @@ Oncampuschef::Application.routes.draw do
   resources :vegetarian
   resources :catering_orders
 
-
   get "orders/athlete" => "orders#athlete"
   get "orders/healthyliving" => "orders#healthyliving"
   get "orders/homestyle" => "orders#homestyle"
   get "orders/budget" => "orders#budget"
   get "orders/vegetarian" => "orders#vegetarian"
+  get "orders/food_picker" => "orders#food_picker"
 
   get "food_objects/menu"
  
