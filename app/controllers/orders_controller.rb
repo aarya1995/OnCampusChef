@@ -31,8 +31,8 @@ class OrdersController < ApplicationController
 		@new_order.customer_id = current_customer.id
 
 		respond_to do |format|
-			if @amount = 0
-				flash[:error] = "Error: Cannot Order 0 Meals!"
+			if @amount = 0 || @amount > 24
+				flash[:error] = "Error: Must Order 1-24 Meals!"
 				format.html { render action: 'new' }
 			else
 				if @new_order.save
