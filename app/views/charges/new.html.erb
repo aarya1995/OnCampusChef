@@ -14,6 +14,7 @@ body {
 	<div class="panel panel-primary center-block">
 		<div class="panel-heading">Finish your order</div>
 		<div class="panel-body">
+		 <div class="col-md-6">
 		  <div class="row checkout-row">
 			<!-- review order details -->
 			<h1>Review your order: </h1>
@@ -26,7 +27,7 @@ body {
 					<% } %>
 				<% } %>
 
-				<li><p style="font-weight: bold; display: inline;">Date scheduled</p>: <%= rec_order.appointment_date %></li>
+				<li><p style="font-weight: bold; display: inline;">Appointment date</p>: <%= rec_order.appointment_date %></li>
 				<li><p style="font-weight: bold; display: inline;">Address</p>: <%= rec_order.address %></li>
 				<li><p style="font-weight: bold; display: inline;">Phone</p>: <%= rec_order.contact_info %></li>
 	    	</ul>
@@ -58,7 +59,11 @@ body {
 			</div>
 		  </div>
 		</div>
-		<div class="panel-footer"></div>
+		<div class="col-md-6">
+			<img class="receipt-logo img-responsive" src="/assets/wecook-logo.png"/>
+		</div>
+		</div>
+		<div class="panel-footer">We use Stripe's secure payment checkout system</div>
 	</div>
 </div>
 

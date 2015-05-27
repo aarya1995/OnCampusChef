@@ -1523,7 +1523,7 @@ section.dark {
 section.dark.with-bg {
   color: #2b2d35;
   /* added by Abhas 01-28-2015 */
-  background: #FFA319;
+  background: #ff7800;
   background-size: cover;
 }
 section.dark h1,
