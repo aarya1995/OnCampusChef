@@ -1,142 +1,154 @@
 
  <%= render 'shared/header' %>
 
- <div class="container" style= "margin-top: 4%; margin-bottom: 7%;">
- 	<div class="row">
- 		<%= form_for(@food_items, html: { id: "demo-form", "data-parsley-validate": true}) do |f| %>
- 		  <!-- pick food items -->
-		  <div class="first block1 show">
-			<div class="row">
-				<ol class="test-menu">
-					<% i = 0 %>
-					<% @food_items.each do |food| %>
-					
-					<%= check_box_tag(:food, style: 'display:inline;', onclick: 'toggle_visibility("quantity i%>");') %>
+<div class="container ms-checkout">
+<form id="example-advanced-form" action="<%=orders_path%>" method="POST">
+    <h3>Order</h3>
+    <fieldset class="step1-order">
+        <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+ 
+       		<div class="row">
+       			<legend class="ms-legend-1">Select up to 24 meals</legend>
+                <ol class="test-menu">
+                    <% i = 0 %>
+                    <% @food_items.each do |food| %>
 
-					<select name="<%= food.name %>" style="display:none;" class="quantity" id="quantity<%=i%>" data-parsley-group="block1" required/>
-						<option value="1">1</option>
-						<option value="2">2</option>
-						<option value="3">3</option>
-						<option value="4">4</option>
-					</select> 
-					<li class="menu-object"><%= food.name %></li>
-					<% i = i + 1 %>
-					<% end %>
-				</ol>
-			</div>
+                    <input type="checkbox" style="display:inline; margin-bottom: 7%;" onclick="toggle_visibility('quantity<%=i%>');" id="a"/>
+                    <label for="a"><%= food.name %></label> 
+                    <select name="<%= food.name %>" style="display:none;" class="quantity required" id="quantity<%=i%>" data-parsley-group="block1"/>
+                        <% j = 0 %>
+                        <% while j < 25 %>
+                        <option value="<%=j%>"><%=j%></option>
+                        <% j = j + 1 %>
+                        <% end %>
 
-
-			<script>
-				function toggle_visibility(id) {
-
-					var e = document.getElementById(id);
-
-					if(e.style.display == 'inline-block')
-						e.style.display = 'none';
-					else
-						e.style.display = 'inline-block';
-				}
-			</script>
+                    </select>
+                    </br> 
+                    
+                    <% i = i + 1 %>
+                    <% end %>
+                </ol>
+            </div>
 
 
+            <script>
+                function toggle_visibility(id) {
 
-		    <span class="next btn btn-info" data-current-block="1" data-next-block="2">Next ></span>
-		  </div>
+                    var e = document.getElementById(id);
 
+                    if(e.style.display == 'inline-block')
+                        e.style.display = 'none';
+                    else
+                        e.style.display = 'inline-block';
+                }
+            </script>
+    </fieldset>
+ 
+    <h3>Schedule</h3>
+    <fieldset>
+        <legend class="ms-legend-2">Select a date and time that you will be available</legend>
+ 
+        <div class="row">
+                    <div class="col-md-8">
+	                    <h3 class="fs-title">Pick a time that you'll be home</h3>
+	                    <div class="form-group" style="margin-top: 3%;">
+	                        <div class='input-group date' id='datetimepicker1'>
+	                        <input type="text" class="form-control required" name="appointment_date" data-parsley-group="block2" required />
+	                        <span class="input-group-addon">
+	                        <span class="glyphicon glyphicon-calendar"></span>
+	                        </span>
+	                        </div>
+	                    </div>
+                    </div>
+                    
 
+                <script type="text/javascript">
+                    $(function () {
+                        $('#datetimepicker1').datetimepicker({
+                        sideBySide: true,
+                        });
+                    });
+                </script>
+        </div>
+    </fieldset>
+ 
+    <h3>Contact</h3>
+    <fieldset>
+    	<legend class="ms-legend">Enter your phone number and address</legend>
+        <div class="row shit">
+                <div class="col-md-10" style="margin-left: 3%;">
+                        <h2 class="fs-title">Enter Contact info</h2>
+                        <h3 class="fs-subtitle" style="margin-bottom: 4%;">So that we can get your food to you!</h3>
+                        <div class="input-group">
+                        <span class="input-group-addon" id="basic-addon1">Address: </span>
+                        <input type="text" class="form-control required" placeholder="100 Hungry Lane" aria-describedby="basic-addon1" name="address" data-parsley-group="block3" required />
+                        </div>
+                        <div class="input-group">
+                        <span class="input-group-addon" id="basic-addon1">Phone</span>
+                        <input type="text" class="form-control required" placeholder="555-555-5555" aria-describedby="basic-addon1" name="contact_info" data-parsley-group="block3" required>
+                        </div>
 
-		  <!-- schedule appointment -->
-		  <div class="second block2 hidden">
-		   	<div class="row shit">
-				<div class="col-md-4">
-				</div>
-				<div class="col-md-4">
-					<div class="center-block">
-					<h1>
-						Pick a Date and Time
-					</h1>
-					<div class="form-group">
-						<div class='input-group date' id='datetimepicker1'>
-						<input type="text" class="form-control" name="appointment_date" data-parsley-group="block2" required />
-			        	<span class="input-group-addon">
-			           	<span class="glyphicon glyphicon-calendar"></span>
-			        	</span>
-						</div>
-					</div>
-					</div>
+                        <input style="margin-top: 5%;" type="submit" class="btn btn-info submit" />
+                </div>
+            </div>
+    </fieldset>
+ 
+</form>
 
-				<script type="text/javascript">
-					$(function () {
-						$('#datetimepicker1').datetimepicker({
-						sideBySide: true,
-						});
-					});
-				</script>
-
-				</div>
-				<div class="col-md-4">
-				</div>
-			</div>
-
-		    <span class="next btn btn-info pull-left" data-current-block="2" data-next-block="1">< Previous</span>
-		    <span class="next btn btn-info" data-current-block="2" data-next-block="3">Next ></span>
-		 </div>
-
-
-
-		  <!-- enter contact info -->
-		  <div class="third block3 hidden">
-		    <div class="row shit">
-				<div class="col-md-4">
-				</div>
-				<div class="col-md-4">
-					<div class="center-block">
-						<h1>Enter Address and Phone Number</h1>
-						<div class="input-group">
-			  			<span class="input-group-addon" id="basic-addon1">Address: </span>
-			 	 		<input type="text" class="form-control" placeholder="100 Hungry Lane" aria-describedby="basic-addon1" name="address" data-parsley-group="block3" required />
-						</div>
-						<div class="input-group">
-			  			<span class="input-group-addon" id="basic-addon1">Phone</span>
-			 	 		<input type="text" class="form-control" placeholder="555-555-5555" aria-describedby="basic-addon1" name="contact_info" data-parsley-group="block3" required>
-						</div>
-		   			</div>
-		   		</div>
-		   		<div class="col-md-4">
-				</div>
-
-		    <span class="next btn btn-info pull-left" data-current-block="3" data-next-block="2">< Previous</span>
-		    <input type="submit" class="btn btn-default" />
-		    </div>
-		  </div>
-		<% end %>
-
-	</div>
 </div>
 
-<script type="text/javascript">
-$(document).ready(function () {
-  $('.next').on('click', function () {
-    var current = $(this).data('currentBlock'),
-      next = $(this).data('nextBlock');
+<script>
 
-    // only validate going forward. If current group is invalid, do not go further
-    // .parsley().validate() returns validation result AND show errors
-    if (next > current)
-      if (false === $('#demo-form').parsley().validate('block' + current))
-        return;
-
-    // validation was ok. We can go on next step.
-    $('.block' + current)
-      .removeClass('show')
-      .addClass('hidden');
-
-    $('.block' + next)
-      .removeClass('hidden')
-      .addClass('show');
-
-  });
+var form = $("#example-advanced-form").show();
+ 
+form.steps({
+    headerTag: "h3",
+    bodyTag: "fieldset",
+    transitionEffect: "slideLeft",
+    onStepChanging: function (event, currentIndex, newIndex)
+    {
+        // Allways allow previous action even if the current form is not valid!
+        if (currentIndex > newIndex)
+        {
+            return true;
+        }
+        // Forbid next action on "Warning" step if the user is to young
+        if (newIndex === 3 && Number($("#age-2").val()) < 18)
+        {
+            return false;
+        }
+        // Needed in some cases if the user went back (clean up)
+        if (currentIndex < newIndex)
+        {
+            // To remove error styles
+            form.find(".body:eq(" + newIndex + ") label.error").remove();
+            form.find(".body:eq(" + newIndex + ") .error").removeClass("error");
+        }
+        form.validate().settings.ignore = ":disabled,:hidden";
+        return form.valid();
+    },
+    onStepChanged: function (event, currentIndex, priorIndex)
+    {
+        // Used to skip the "Warning" step if the user is old enough.
+        if (currentIndex === 2 && Number($("#age-2").val()) >= 18)
+        {
+            form.steps("next");
+        }
+        // Used to skip the "Warning" step if the user is old enough and wants to the previous step.
+        if (currentIndex === 2 && priorIndex === 3)
+        {
+            form.steps("previous");
+        }
+    }
+}).validate({
+    errorPlacement: function errorPlacement(error, element) { element.before(error); },
+    rules: {
+        confirm: {
+            equalTo: "#password-2"
+        }
+    }
 });
+
 </script>
 
 

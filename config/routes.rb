@@ -28,7 +28,8 @@ Oncampuschef::Application.routes.draw do
   get "orders/budget" => "orders#budget"
   get "orders/vegetarian" => "orders#vegetarian"
   get "orders/food_picker" => "orders#food_picker"
-  post "orders/price" => "orders#price"
+  get "orders/test" => "orders#test"
+  get "orders/test2" => "orders#test2"
 
   get "food_objects/menu"
  

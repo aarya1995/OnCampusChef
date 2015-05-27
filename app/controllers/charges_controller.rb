@@ -1,35 +1,54 @@
 class ChargesController < ApplicationController
-	@amount = 0
-	def new
+	before_filter :authenticate_customer!
+	# Must put in sanity checks, user could manipulate POSTDATA
 
+	def new
+	  @PRICE_PER_MEAL = 1200
+	  @amount = 0
+	  @recent_order = Order.first(:order => 'id DESC')
+	  @items = @recent_order.food_items
+	  @items.each {|x| 
+	  	x.each_value {|v|
+	  		@amount = @amount + (v.to_i * @PRICE_PER_MEAL)
+	  	}
+	  }
 	end
 
 	def create
-
-
-	  # Amount in cents
-	  @amount = 500 # Need to figure out how to make this a variable amount
-
 	  #if # stripe customer ID does not exist in database for this user
-		  customer = Stripe::Customer.create(
-		    :email => 'example@stripe.com',
-		    :card  => params[:stripeToken]
+		  @PRICE_PER_MEAL = 1200
+		  @amount = 0
+		  @recent_order = Order.first(:order => 'id DESC')
+		  if @recent_order.nil?
+		  	raise "wtf lolz"
+		  end
+		 @items = @recent_order.food_items
+		 @items.each {|x| 
+		  	x.each_value {|v|
+		  		@amount = @amount + (v.to_i * @PRICE_PER_MEAL)
+		  	}
+		  }
+
+		# Get the credit card details submitted by the form
+		token = params[:stripeToken]
+
+		# Create the charge on Stripe's servers - this will charge the user's card
+		  charge = Stripe::Charge.create(
+		    :amount => @amount, # amount in cents, again
+		    :currency => "usd",
+		    :source => token,
+		    :description => "Example charge"
 		  )
 
-		# save_stripe_customer_id(user, customer.id)
-	  #else
-	  	# customer_id = get_stripe_customer_id(user)
-	  #end
+		rescue Stripe::CardError => e
+		  flash[:error] = e.message
+		  redirect_to charges_path
+		end
 
-	  charge = Stripe::Charge.create(
-	    :customer    => customer.id,
-	    :amount      => @amount,
-	    :description => 'Rails Stripe customer',
-	    :currency    => 'usd'
-	  )
-
-	rescue Stripe::CardError => e
-	  flash[:error] = e.message
-	  redirect_to charges_path
-	end
+		if @recent_order != nil
+			@recent_order.status = "paid"
+			@recent_order.save
+		else
+			#raise "recent order not found"
+		end
 end
