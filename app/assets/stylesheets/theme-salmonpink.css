@@ -2,6 +2,7 @@ body {
   background: white; /* Change to off-white color */
   font-family: 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
+
 .no-padding {
   padding: 0 !important;
 }
@@ -1203,7 +1204,7 @@ section .login-overlay {
 #intro-video .carousel-caption-center h1 {
   font-size: 3em;
   font-weight: 800;
-  margin: 0 0 0.5em;
+  margin: 1.2 0 0.5em;
 }
 #intro .carousel-caption-center h2,
 #intro-video .carousel-caption-center h2 {

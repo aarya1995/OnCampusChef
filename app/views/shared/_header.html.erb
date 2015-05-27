@@ -1,7 +1,7 @@
 <div class = "navbar navbar-inverse navbar-static-top navigation">
 	<div class = "container">
 		<div class = "navbar-header">
-			<a href= "<%= root_path %>" class = "navbar-brand home-link">OnCampusChef</a>
+			<a href= "<%= root_path %>" class = "navbar-brand home-link">WeCook</a>
 
 			<button class = "navbar-toggle" data-toggle = "collapse" data-target = ".navHeaderCollapse">
 				<span class = "icon-bar"></span>
@@ -12,17 +12,7 @@
 		<div class = "collapse navbar-collapse navHeaderCollapse">
 			<ul class = "nav navbar-nav navbar-right">
 				<li class = "active"><a href = "<%= root_path %>">Home</a></li>
-				<li class="dropdown">
-                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Order <span class="caret"></span></a>
-                      <ul class="dropdown-menu" role="menu">
-                        <li><a href="/static_pages/chefs">Menu</a></li>
-                        <li><a href="/static_pages/pricing">Pricing</a></li>
-                        <li><a href="/static_pages/about">About</a></li>
-                      </ul>
-                </li>
-				<li><a href = "/static_pages/about_us">Our Team</a></li>
-				<li class=""><a href="/catering">Catering</a></li>
-
+				<li><a href = "/food_objects/menu">Menu</a></li>
 				<% if signed_in? %>
 					<li><a href="/profile">Account</a></li>
 					

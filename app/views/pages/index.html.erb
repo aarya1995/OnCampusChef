@@ -19,7 +19,7 @@
 
                 <% if signed_in? %>
 
-                    <p><a class="btn btn-lg btn-primary scroll" href="/static_pages/chefs" role="button">Menu</a></p>
+                    <p><a class="btn btn-lg btn-primary scroll" href="/food_objects/menu" role="button">Menu</a></p>
 
 
                 <% else %>
@@ -52,25 +52,19 @@
         <div class="row">
           <a href="static_pages/about" style="text-decoration:none; color: black;">
           <div class="col-sm-4 text-center overlay-text icons">
-            <div class="icon-wrapper">
-             <i class="fa fa-search icon-large"></i>
-            </div>
+            <img src="/assets/PotGraphicBase.png" class="wecook-graphic"/>
             <h3>Explore</h3>
             <p>Create an account and browse through a diverse menu of healthy, gourmet meals.</p>
           </div> </a>
           <a href="static_pages/about" style="text-decoration:none; color: black;">
           <div class="col-sm-4 text-center overlay-text icons">
-            <div class="icon-wrapper">
-              <i class="fa fa-shopping-cart icon-large"></i>
-            </div>
+            <img src="/assets/calendarlogo.png" class="wecook-graphic"/>
             <h3>Order</h3>
             <p>Pick up to three of your favorite meals and pay through our secure checkout system.</p>
           </div> </a>
           <a href="static_pages/about" style="text-decoration:none; color: black;">
           <div class="col-sm-4 text-center overlay-text icons">
-            <div class="icon-wrapper">
-              <i class="fa fa-home icon-large"></i>
-            </div>
+            <img src="/assets/clocklogo.png" class="wecook-graphic"/>
             <h3>Relax</h3>
             <p>We deliver the groceries and appoint you your own personal chef. The chef will meet with you on appointment and bulk prepare ten meals for your enjoyment.</p>
           </div> </a>
@@ -120,7 +114,7 @@
                     <h3>What are you waiting for?</h3>
 
                     <% if signed_in? %>
-                      <a href= "/static_pages/chefs" class="btn btn-lg btn-light">Order Now</a>
+                      <a href= "/food_objects/menu" class="btn btn-lg btn-primary">Order Now</a>
                     <% else %>
                      <%= link_to('Sign Up Today!', new_customer_session_path, class: 'btn btn-lg btn-light', role: 'button')  %>
                     <a href="/consultations/new" class="btn btn-lg btn-dark">Get a Free Consultation!</a>
