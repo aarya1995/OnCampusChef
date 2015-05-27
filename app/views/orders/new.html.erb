@@ -2,6 +2,12 @@
  <%= render 'shared/header' %>
  	
 <div class="container ms-checkout">
+
+		<% flash.each do |key, value| %>
+			<h3 style="color: red;"><%= content_tag(:div, value, class: "alert alert-#{key}") %></h3>
+		<% end %> 
+
+
 <form id="example-advanced-form" action="<%=orders_path%>" method="POST">
     <h3>Order</h3>
     <fieldset class="step1-order">

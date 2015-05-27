@@ -1,41 +1,65 @@
 <%= render 'shared/header' %>
+	
+	  <!-- fix for data races: should be where current_customer_id == something -->
+	 <% rec_order = Order.where("customer_id = #{current_customer.id}").first(:order => 'id DESC') %>
 
-	 <% rec_order = Order.first(:order => 'id DESC') %>
+<style>
+body {
+	background-color: lightgray;
+}
+</style>
 
-<style> body {background-color:lightgray} </style>
-<div class="container">
-	<div class="row shit">
+<div class="container review-order">
 
-		<div class="col-md-4">
-		</div>
+	<div class="panel panel-primary center-block">
+		<div class="panel-heading">Finish your order</div>
+		<div class="panel-body">
+		  <div class="row checkout-row">
+			<!-- review order details -->
+			<h1>Review your order: </h1>
+			<ul>
+				<% rec_order.food_items.each{ |x| %>
+					<% x.each_pair {|k, v| %>
+						<% if !(v.to_i <= 0) %>
+							<li><p style="font-weight: bold; display: inline;"><%= k %></p>: <%= v %></li>
+						<% end %>
+					<% } %>
+				<% } %>
 
-		<div class="col-md-4 text-center">
-			<% if rec_order.status == "unpaid" %>
+				<li><p style="font-weight: bold; display: inline;">Date scheduled</p>: <%= rec_order.appointment_date %></li>
+				<li><p style="font-weight: bold; display: inline;">Address</p>: <%= rec_order.address %></li>
+				<li><p style="font-weight: bold; display: inline;">Phone</p>: <%= rec_order.contact_info %></li>
+	    	</ul>
+          </div>
+	    	<!-- payment button -->
+          <div class="row checkout-row">
+          	<div class="stripe-button">
+		    	<% if rec_order.status == "unpaid" %>
 
-				<%= form_tag charges_path do %>
-				  <article>
-				    <label class="amount">
-				      <span>Amount: $<%="#{'%.02f' %(@amount / 100)}"%></span>
-				    </label>
-				  </article>
+					<%= form_tag charges_path do %>
+					  <article style="margin-top: 5%;">
+					    <label class="amount">
+					      <span><h3>Amount: $<%="#{'%.02f' %(@amount / 100)}"%></h3></span>
+					    </label>
+					  </article>
 
-				  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-				  		  data-image="/assets/logosmall.png"
-				  		  data-name="WeCook"
-				          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-				          data-description="Your Kitchen, Our Chef"
-				          data-amount="<%=@amount%>"></script>
+					  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+					  		  data-image="/assets/logosmall.png"
+					  		  data-name="WeCook"
+					          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+					          data-description="Your Kitchen, Our Chef"
+					          data-amount="<%=@amount%>"></script>
+					<% end %>
+
+				<% else %>
+					<h1 class="text-center"> No New Orders</h1>
+					<script>window.location.href="/orders/new"</script>
 				<% end %>
-
-			<% else %>
-				<h1 class="text-center"> No New Orders</h1>
-				<script>window.location.href="/orders/new"</script>
-			<% end %>
+			</div>
+		  </div>
 		</div>
-
-	<div class="col-md-4">
-	</div>
-
+		<div class="panel-footer"></div>
 	</div>
 </div>
+
 <%= render 'shared/footer' %>

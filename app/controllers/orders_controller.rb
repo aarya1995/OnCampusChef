@@ -8,13 +8,6 @@ class OrdersController < ApplicationController
 		@food_items = FoodObject.all
 	end
 
-	def test
-	end
-
-	def test2
-		@food_items = FoodObject.all
-	end
-
 	def create
 		@food_items = FoodObject.all
 		@amount = 0
@@ -38,7 +31,7 @@ class OrdersController < ApplicationController
 		@new_order.customer_id = current_customer.id
 
 		respond_to do |format|
-			if @amount = 0 || @amount > 24
+			if @amount <= 0 || @amount > 24
 				flash[:error] = "Error: Must Order 1-24 Meals!"
 				format.html { render action: 'new' }
 			else
@@ -54,9 +47,4 @@ class OrdersController < ApplicationController
 			end
 		end
 	end
-
-	#### Implement this shit later... its the real way
-	# def order_params		
-	# 	params.require(:order).permit(:contact_info, :address, :appointment_date)
-	# end
 end
