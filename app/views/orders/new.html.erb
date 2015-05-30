@@ -1,7 +1,7 @@
 
  <%= render 'shared/header' %>
  	
-<div class="container ms-checkout">
+<div class="container ms-checkout a">
 
 		<% flash.each do |key, value| %>
 			<h3 style="color: red;"><%= content_tag(:div, value, class: "alert alert-#{key}") %></h3>
