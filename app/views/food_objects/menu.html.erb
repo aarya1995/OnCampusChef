@@ -1,21 +1,19 @@
 <%= render 'shared/header' %>
 
 <div class="container menu-container">
-	
-			<% @food.each do |food| %>
-				<div class = "col-md-4 col-lg-4 col-sm-12 food_info">
-					
-					<img src= "<%= food.imageurl %>">
+	<% @food.each_slice(3) do |food| %>
+	  <div class="row">
+	    <% food.each do |food| %>
+	      <div class="col-md-4 food_info">
 
-					<p><%= food.name %> - $<%= food.price %></p>  
+	      	<img src="<%= food.imageurl %>" />
+	      	<p><%= food.name %></p>
+	      	<p><%= food.description %></p>
 
-					
-					<p><%= food.description %></p>
-					
-
-				</div>
-			<% end %>
-
+	      </div>
+	    <% end %>
+	  </div>
+	<% end %>
 </div>
 
 

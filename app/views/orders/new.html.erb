@@ -13,27 +13,31 @@
     <fieldset class="step1-order">
         <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
  
-       		<div class="row">
+       		<div class="row menu-checkout">
        			<legend class="ms-legend-1">Select up to 24 meals</legend>
-                <ol class="test-menu">
-                    <% i = 0 %>
-                    <% @food_items.each do |food| %>
+       			<% @food_items.each_slice(7) do |food| %>
+       			  <div class="col-md-6">
+	                <ol class="test-menu">
+	                    <% i = 0 %>
+	                    <% food.each do |food| %>
 
-                    <input type="checkbox" style="display:inline; margin-bottom: 7%;" onclick="toggle_visibility('quantity<%=i%>');" id="a"/>
-                    <label for="a"><%= food.name %></label> 
-                    <select name="<%= food.name %>" style="display:none;" class="quantity required" id="quantity<%=i%>" data-parsley-group="block1"/>
-                        <% j = 0 %>
-                        <% while j < 25 %>
-                        <option value="<%=j%>"><%=j%></option>
-                        <% j = j + 1 %>
-                        <% end %>
+	                    <input type="checkbox" style="display:inline; margin-bottom: 7%;" onclick="toggle_visibility('quantity<%=i%>');" id="a"/>
+	                    <label for="a"><%= food.name %></label> 
+	                    <select name="<%= food.name %>" style="display:none;" class="quantity required" id="quantity<%=i%>" data-parsley-group="block1"/>
+	                        <% j = 0 %>
+	                        <% while j < 25 %>
+	                        <option value="<%=j%>"><%=j%></option>
+	                        <% j = j + 1 %>
+	                        <% end %>
 
-                    </select>
-                    </br> 
-                    
-                    <% i = i + 1 %>
-                    <% end %>
-                </ol>
+	                    </select>
+	                    </br> 
+	                    
+	                    <% i = i + 1 %>
+	                    <% end %>
+	                </ol>
+	               </div>
+	            <% end %>
             </div>
 
 
