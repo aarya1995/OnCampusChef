@@ -11,48 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150526083346) do
+ActiveRecord::Schema.define(version: 20150601034544) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "catering_orders", force: true do |t|
-    t.string   "name"
-    t.string   "email"
-    t.string   "phone"
-    t.string   "availability"
-    t.string   "address"
-    t.string   "organization"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "clients", force: true do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "clients", ["email"], name: "index_clients_on_email", unique: true, using: :btree
-  add_index "clients", ["reset_password_token"], name: "index_clients_on_reset_password_token", unique: true, using: :btree
-
-  create_table "consultations", force: true do |t|
-    t.string   "name"
-    t.string   "email"
-    t.string   "phone"
-    t.string   "address"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
   create_table "customers", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -76,27 +38,6 @@ ActiveRecord::Schema.define(version: 20150526083346) do
   add_index "customers", ["email"], name: "index_customers_on_email", unique: true, using: :btree
   add_index "customers", ["reset_password_token"], name: "index_customers_on_reset_password_token", unique: true, using: :btree
 
-  create_table "end_users", force: true do |t|
-    t.string   "name"
-    t.string   "phonenumber"
-    t.string   "address"
-    t.string   "email"
-    t.string   "mealplan"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "plan"
-  end
-
-  create_table "food_items", force: true do |t|
-    t.string   "name"
-    t.string   "image"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "mealplan_id_id"
-  end
-
-  add_index "food_items", ["mealplan_id_id"], name: "index_food_items_on_mealplan_id_id", using: :btree
-
   create_table "food_objects", force: true do |t|
     t.string   "name"
     t.integer  "price"
@@ -104,12 +45,6 @@ ActiveRecord::Schema.define(version: 20150526083346) do
     t.string   "imageurl"
     t.string   "description"
     t.string   "category"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "mealplans", force: true do |t|
-    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -126,15 +61,5 @@ ActiveRecord::Schema.define(version: 20150526083346) do
   end
 
   add_index "orders", ["customer_id"], name: "index_orders_on_customer_id", using: :btree
-
-  create_table "pot_users", force: true do |t|
-    t.string   "name"
-    t.string   "email"
-    t.string   "phone"
-    t.string   "address"
-    t.string   "basicinfo"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
 end
