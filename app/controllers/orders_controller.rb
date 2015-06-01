@@ -5,7 +5,7 @@ class OrdersController < ApplicationController
 	end
 
 	def new
-		@food_items = FoodObject.all
+		@food_items = FoodObject.find(:all, :order => "id desc", :limit => 6)
 	end
 
 	def create
