@@ -47,8 +47,9 @@ class ChargesController < ApplicationController
     def create
       #if # stripe customer ID does not exist in database for this user
       # Calculating cost of order #
-      @numMeals = @recent_order.num_meals
       @recent_order = Order.where("customer_id = #{current_customer.id}").first(:order => 'id DESC')
+      
+      @numMeals = @recent_order.num_meals
 
       if @numMeals.to_i == 2
         @finalCost = 7455
