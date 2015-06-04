@@ -1,3 +1,4 @@
+<% provide(:title, 'Order') %>
 
  <%= render 'shared/header' %>
  	
@@ -9,72 +10,90 @@
 
 
 <form id="example-advanced-form" action="<%=orders_path%>" method="POST">
+    
+    <!-- step 1: pick your meals -->
+
     <h3>Order</h3>
     <fieldset class="step1-order">
         <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
- 
+
        		<div class="row menu-checkout">
-       			<legend class="ms-legend-1">Select up to 24 meals</legend>
-       			<% @food_items.each_slice(7) do |food| %>
-       			  <div class="col-md-6">
-	                <ol class="test-menu">
-	                    <% i = 0 %>
-	                    <% food.each do |food| %>
-
-	                    <input type="checkbox" style="display:inline; margin-bottom: 7%;" onclick="toggle_visibility('quantity<%=i%>');" id="a"/>
-	                    <label for="a"><%= food.name %></label> 
-	                    <select name="<%= food.name %>" style="display:none;" class="quantity required" id="quantity<%=i%>" data-parsley-group="block1"/>
-	                        <% j = 0 %>
-	                        <% while j < 25 %>
-	                        <option value="<%=j%>"><%=j%></option>
-	                        <% j = j + 1 %>
-	                        <% end %>
-
-	                    </select>
-	                    </br> 
-	                    
-	                    <% i = i + 1 %>
-	                    <% end %>
-	                </ol>
-	               </div>
-	            <% end %>
+       			<legend class="ms-legend-1">Select up to <%= @howMany %> meals</legend>
+       			
+	                <div class="col-md-5 menu">
+                        <% i = 1 %>
+                        <% @food_items.each do |food| %>
+                          <div class="menu-item">
+    	                    <input type="checkbox" id="a" name="choice<%= i %>" value="<%= food.name %>"/>
+    	                    <label for="a"><%= food.name %></label>
+                          </div>
+                         <% i = i + 1 %>
+                        <% end %> 
+                    </div>
+	                
+	            
             </div>
-
+            
+            <%= javascript_tag do %>
+              var max = <%= @howMany.to_i.to_json %>;
+            <% end %>
 
             <script>
-                function toggle_visibility(id) {
+                function countChecked() {                             
+                  var n = $("input:checked").length;                       
 
-                    var e = document.getElementById(id);
-
-                    if(e.style.display == 'inline-block')
-                        e.style.display = 'none';
-                    else
-                        e.style.display = 'inline-block';
-                }
+                  if (n == max)                                              
+                  {                                                        
+                     $(':checkbox:not(:checked)').prop('disabled', true);  
+                  }                                                        
+                  else                                                     
+                  {                                                        
+                     $(':checkbox:not(:checked)').prop('disabled', false); 
+                  }                                                        
+                }                                                                                              
+                $(":checkbox").click(countChecked);       
             </script>
     </fieldset>
  
     <h3>Schedule</h3>
     <fieldset>
+        <div class="row" style="margin-top: 1%;">
         <legend class="ms-legend-2">Select a date and time that you will be available</legend>
  
-        <div class="row">
                     <div class="col-md-8">
-	                    <h3 class="fs-title">Pick a time that you'll be home</h3>
+	                    <h3 class="fs-title">Pick a time that you want your groceries delivered</h3>
 	                    <div class="form-group" style="margin-top: 3%;">
 	                        <div class='input-group date' id='datetimepicker1'>
-	                        <input type="text" class="form-control required" name="appointment_date" data-parsley-group="block2" required />
+	                        <input type="text" class="form-control required" name="grocery_date" required />
 	                        <span class="input-group-addon">
 	                        <span class="glyphicon glyphicon-calendar"></span>
 	                        </span>
 	                        </div>
 	                    </div>
                     </div>
+
+                    <div class="col-md-8" style="margin-top: 5%;">
+                        <h3 class="fs-title">Pick a time for your chef appointment</h3>
+                        <div class="form-group" style="margin-top: 3%;">
+                            <div class='input-group date' id='datetimepicker2'>
+                            <input type="text" class="form-control required" name="chef_date" required />
+                            <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                            </span>
+                            </div>
+                        </div>
+                    </div>
                     
 
                 <script type="text/javascript">
                     $(function () {
                         $('#datetimepicker1').datetimepicker({
+                        sideBySide: true,
+                        });
+                    });
+
+                    $(function () {
+                        $('#datetimepicker2').datetimepicker({
                         sideBySide: true,
                         });
                     });

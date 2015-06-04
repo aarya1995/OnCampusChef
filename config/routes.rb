@@ -2,34 +2,20 @@ Oncampuschef::Application.routes.draw do
 
   devise_for :customers, :controllers => { :omniauth_callbacks => "customers/omniauth_callbacks" }
 
-  get "static_pages/pricing"
-  get "static_pages/about"
-  get "static_pages/about_us"
-  get "static_pages/chefs"
-  get "static_pages/test"
-  get "static_pages/test2"
+  get "static_pages/test1"
 
 
   resources :charges, :except => [:show]
-  resources :end_users
-  resources :pot_users
-  resources :consultations
-  resources :healthy_living
   resources :orders, :except => [:show]
-  resources :athlete
-  resources :homestyle
-  resources :budget
-  resources :vegetarian
-  resources :catering_orders
 
-  get "orders/athlete" => "orders#athlete"
-  get "orders/healthyliving" => "orders#healthyliving"
-  get "orders/homestyle" => "orders#homestyle"
-  get "orders/budget" => "orders#budget"
+ 
   get "orders/vegetarian" => "orders#vegetarian"
   get "orders/food_picker" => "orders#food_picker"
   get "orders/test" => "orders#test"
   get "orders/test2" => "orders#test2"
+  get "orders/quantity" => "orders#quantity"
+  post "orders/new" => "orders#new"
+
 
   get "food_objects/menu"
  

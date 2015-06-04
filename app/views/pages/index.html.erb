@@ -102,8 +102,7 @@
                     <% if signed_in? %>
                       <a href= "/food_objects/menu" class="btn btn-lg btn-primary">Order Now</a>
                     <% else %>
-                     <%= link_to('Sign Up Today!', new_customer_session_path, class: 'btn btn-lg btn-light', role: 'button')  %>
-                    <a href="/consultations/new" class="btn btn-lg btn-dark">Get a Free Consultation!</a>
+                     <%= link_to('Sign Up Today!', new_customer_session_path, class: 'btn btn-lg btn-primary', role: 'button')  %>
                     <% end %>
                 </div>
             </div>

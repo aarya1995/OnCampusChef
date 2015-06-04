@@ -19,15 +19,14 @@ body {
 			<!-- review order details -->
 			<h1>Review your order: </h1>
 			<ul>
+				<li><p style="font-weight: bold; display: inline;">Total number of meals ordered</p>: <%= rec_order.num_meals %></li>
 				<% rec_order.food_items.each{ |x| %>
-					<% x.each_pair {|k, v| %>
-						<% if !(v.to_i <= 0) %>
-							<li><p style="font-weight: bold; display: inline;"><%= k %></p>: <%= v %></li>
-						<% end %>
-					<% } %>
+						
+							<li><p style="font-weight: bold; display: inline;"><%= x %></li>
+					
 				<% } %>
-
-				<li><p style="font-weight: bold; display: inline;">Appointment date</p>: <%= rec_order.appointment_date %></li>
+				<li><p style="font-weight: bold; display: inline;">Grocery Delivery</p>: <%= rec_order.grocery_date %></li>
+				<li><p style="font-weight: bold; display: inline;">Chef Appointment</p>: <%= rec_order.appointment_date %></li>
 				<li><p style="font-weight: bold; display: inline;">Address</p>: <%= rec_order.address %></li>
 				<li><p style="font-weight: bold; display: inline;">Phone</p>: <%= rec_order.contact_info %></li>
 	    	</ul>
@@ -40,7 +39,7 @@ body {
 					<%= form_tag charges_path do %>
 					  <article style="margin-top: 5%;">
 					    <label class="amount">
-					      <span><h3>Amount: $<%="#{'%.02f' %(@amount / 100)}"%></h3></span>
+					      <span><h3>Amount: $<%="#{'%.02f' %(@finalCost.to_f / 100)}"%></h3></span>
 					    </label>
 					  </article>
 
@@ -49,7 +48,7 @@ body {
 					  		  data-name="WeCook"
 					          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
 					          data-description="Your Kitchen, Our Chef"
-					          data-amount="<%=@amount%>"></script>
+					          data-amount="<%=@finalCost%>"></script>
 					<% end %>
 
 				<% else %>
