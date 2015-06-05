@@ -27,7 +27,9 @@
                     <%= link_to('View the menu', '/food_objects/menu', class: 'btn btn-lg btn-primary scroll', role: 'button')  %>
 
                 <% end %>
-               <!-- <a href="#about" class="center-block"><i class="fa fa-arrow-circle-o-down"></i></a> -->
+                <div class="row" style="margin-top: 5%; margin-bottom: 2%; font-size: 70px;">
+                  <a href="#about" class="scroll" style="color: white;"><i class="fa fa-arrow-circle-o-down" style="position: relative;"></i></a>
+                </div>
               </div>
             </div>
           </div>
@@ -42,32 +44,24 @@
     <section id="about" class="content text-center light">
 
       <div class="container">
-        <!-- Three columns of text below the carousel -->
+        
         <div class="row">
-          <div class="col-lg-12 overlay-text">
-            <h2>Three Step Process</h2>
-          </div><!-- /.col-lg-12 -->
-        </div><!-- /.row -->
-
-        <div class="row">
-          <a href="static_pages/about" style="text-decoration:none; color: black;">
-          <div class="col-sm-4 text-center overlay-text icons">
-            <img src="/assets/PotGraphicBase.png" class="wecook-graphic"/>
-            <h3>Explore</h3>
-            <p>Create an account and browse through a diverse menu of healthy, gourmet meals.</p>
-          </div> </a>
-          <a href="static_pages/about" style="text-decoration:none; color: black;">
-          <div class="col-sm-4 text-center overlay-text icons">
-            <img src="/assets/calendarlogo.png" class="wecook-graphic"/>
-            <h3>Order</h3>
-            <p>Pick up to three of your favorite meals and pay through our secure checkout system.</p>
-          </div> </a>
-          <a href="static_pages/about" style="text-decoration:none; color: black;">
-          <div class="col-sm-4 text-center overlay-text icons">
-            <img src="/assets/clocklogo.png" class="wecook-graphic"/>
-            <h3>Relax</h3>
-            <p>We deliver the groceries and appoint you your own personal chef. The chef will meet with you on appointment and bulk prepare ten meals for your enjoyment.</p>
-          </div> </a>
+          <div class="col-sm-4 text-center overlay-text">
+            <img src="/assets/chef.png" class="chef-icon" style="margin-bottom: 5%;"/>
+            <h3>Trusted Chefs</h3>
+            <p>We source from quality professionals who are certified by the Maryland State Food and Health Department and have demonstrated talent and a passion for gourmet cooking.</p>
+          </div>
+          <div class="col-sm-4 text-center overlay-text">
+            <img src="/assets/calendarlogo.png" class="wecook-calendar"/>
+            <h3>Convenient Scheduling</h3>
+            <p>Book a time for grocery delivery and the chef appointment at your convenience. We take care of the rest.</p>
+          </div>
+          <div class="col-sm-4 text-center overlay-text icon3">
+            <!--<img src="/assets/clocklogo.png" class="wecook-graphic"/>-->
+            <img src="/assets/shield.png" class="shield-icon" style="margin-bottom: 5%;"/>
+            <h3>Secure</h3>
+            <p>All of our sensitive transactions occur over a 128-bit SSL encrycption. We also use Stripe's fully secure and PCI compliant payment gateway system.</p>
+          </div>
         </div><!-- /.row -->
       </div>
 

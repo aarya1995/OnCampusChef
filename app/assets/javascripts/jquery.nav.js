@@ -17,7 +17,7 @@
  * });
  */
 
-/*
+
 (function($, window, document, undefined){
 
 	// our plugin constructor
@@ -223,4 +223,3 @@
 	
 })( jQuery, window , document );
 
-*/

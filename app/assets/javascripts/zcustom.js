@@ -215,6 +215,9 @@ function onePageScroll() {
           //I get fired when you enter a section and I pass the list item of the section
       }
   });
+  
+  //enable smooth scrolling for anchor links
+  
 }
 
 
@@ -225,8 +228,6 @@ $(window).scroll(function() {
       $('.nav li.current').removeClass('current');
   }
 });
-
-
 
 
 //Placeholder fixed for Internet Explorer
