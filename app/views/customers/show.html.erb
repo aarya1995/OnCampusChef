@@ -18,33 +18,41 @@
 		<a href= "/food_objects/menu" class="btn btn-lg btn-primary">Order Now</a>
 	</div>
 	
-	<% if @orders != nil %>
-	<div class="row">
-		<h2>Order History: </h2>
-		<% @orders.each do |order| %>
-		 <div class="order-history-object">
-			<p style="font-weight: bold; display: inline;">Total number of meals ordered</p>: <%= order.num_meals %>
-			</br>
-			<p style="font-weight: bold; display: inline;"> Meals ordered</p>:
-			<p style="display: inline;">
-				<% i = 0 %> 
-				<% order.food_items.each{ |x| %>
-					<%= x %>
+	<% if @orders.length != 0 %>
+		<div class="row">
+			<h2>Order History: </h2>
+			<% @orders.each do |order| %>
+			<% if order.status == "paid" %>
+			 <div class="order-history-object">
+				<p style="font-weight: bold; display: inline;">Total number of meals ordered</p>: <%= order.num_meals %>
+				</br>
+				<p style="font-weight: bold; display: inline;"> Meals ordered</p>:
+				<p style="display: inline;">
+					<% i = 0 %> 
+					<% order.food_items.each{ |x| %>
+						<%= x %>
 
-					<% if order.food_items.length-1 != i %>
-						,
-					<% end %>
+						<% if order.food_items.length-1 != i %>
+							,
+						<% end %>
 
-					<% i = i + 1 %>
-				<% } %>
-			</p>
-			</br>
-			<p style="font-weight: bold; display: inline;">Grocery delivery date</p>: <%= order.grocery_date %>
-			<p style="font-weight: bold; display: inline;">, Chef appointment date</p>: <%= order.appointment_date %>
-			<hr style="border-top: 1px solid #3D3D3D;">
-		  </div>
-		<% end %>
-	</div>
+						<% i = i + 1 %>
+					<% } %>
+				</p>
+				</br>
+				<p style="font-weight: bold; display: inline;">Grocery delivery date</p>: <%= order.grocery_date %>
+				<p style="font-weight: bold; display: inline;">, Chef appointment date</p>: <%= order.appointment_date %>
+				<hr style="border-top: 1px solid #3D3D3D;">
+			  </div>
+			<% end %>
+			<% end %>
+		</div>
+
+	<% else %>
+		<div class="row" style="margin-top: 4%; margin-bottom: 4%;">
+			<h3>Seems like you haven't ordered anything yet, well what are you waiting for?</h3>
+			<p>At WeCook, we strive to bring you the best quality meals and personal chefs so you never have to worry about meal prep or grocery shopping. We take care of it all, because we love you. <i class="fa fa-heart"></i> </p>
+		</div>
 	<% end %>
 
 </div>
