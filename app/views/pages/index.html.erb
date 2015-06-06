@@ -14,9 +14,8 @@
             <div class="row">
               <div class="carousel-caption-center colour-white">
                 
-                <h1 style="margin-top: -7%; font-size: 50px;">Connecting local chefs and you</h1>
+                <h1 style="font-size: 40px; margin-top: -3%;">Connecting local chefs and you</h1>
                 <h3>Your Kitchen, Our Chef.</h3>
-                <h3 style="margin-top: 3%;">Spending a lot of your time on grocery shopping, cooking, and cleaning? Let us whip up gourmet dishes for the entire week with one of our chef appointments!</h3>
 
                 <% if signed_in? %>
 
@@ -28,9 +27,9 @@
                     <%= link_to('View the menu', '/food_objects/menu', class: 'btn btn-lg btn-primary scroll', role: 'button')  %>
 
                 <% end %>
-               <!-- <div class="row" style="margin-bottom: 2%; font-size: 70px;">
+               <div class="row" style="margin-bottom: 2%; margin-top: 5%; font-size: 70px;">
                   <a href="#about" class="scroll" style="color: white;"><i class="fa fa-arrow-circle-o-down" style="position: relative;"></i></a>
-                </div> -->
+               </div>
               </div>
             </div>
           </div>
@@ -45,7 +44,7 @@
     <section id="about" class="content text-center light">
 
       <div class="container">
-          <div class="row" style="margin-bottom: 3%;">
+          <div class="row" style="margin-bottom: 5%;">
             <div class="col-lg-12 overlay-text">
               <h3 style="color:black; font-size: 30px;">Use WeCookInc if you care about Cost &amp; Convenience, Health &amp; Hygiene, Taste &amp; Temptation.</h3>
             </div><!-- /.col-lg-12 -->
@@ -82,8 +81,10 @@
 
       <div class="container">
         <div class="row">
-          <img src="/assets/Infographic1.png" class="center-block img-responsive infographic"/>
-		
+          <div class="col-md-12">
+            <h3 style="margin-top: 2%; color: white; font-size: 25px; margin-bottom: 4%;" class="text-center">Spending a lot of your time on grocery shopping, cooking, and cleaning? Let us whip up gourmet dishes for the entire week with one of our chef appointments!</h3>
+            <img src="/assets/Infographic1.png" class="center-block img-responsive infographic"/>
+          </div>
         </div>
       </div>
 
@@ -97,7 +98,7 @@
       <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h3>What are you waiting for?</h3>
+                    <h3 style="font-size: 25px; margin-bottom: 2%;">What are you waiting for?</h3>
 
                     <% if signed_in? %>
                       <a href= "/food_objects/menu" class="btn btn-lg btn-primary">Order Now</a>
