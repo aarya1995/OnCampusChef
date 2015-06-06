@@ -1,0 +1,145 @@
+<!-- Image Background Page Header -->
+    <!-- Note: The background image is set within the business-casual.css file. -->
+<% provide(:title, 'Why Us') %>
+<%= render 'shared/header' %>
+    <header class="business-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4"></div>
+                <div class="col-lg-4" style="margin-top: 4%;">
+                    <h1 class="tagline text-center">Why Us</h1>
+                    <hr>
+                </div>
+                <div class="col-sm-4"></div>
+            </div>
+        </div> 
+
+        <div class="overlay-bg"></div>
+    </header>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <hr>
+
+        <div class="row why_us">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-8">
+                <h2 style="">WeCook is a service that provides you healthy meals for you and your family for the week. These days it’s hard to know what exactly is in our food and its starting to take a toll. With obesity, diabetes, and other dangerous diseases on the rise, it should be our mission to fight unhealthy eating habits. At WeCook, we wish to lead the frontal assault by bringing homemade cuisine back to the forefront of American dining.</h2>
+            
+            </div>
+            <div class="col-sm-2"></div>
+           <!-- <div class="col-sm-4">
+                <h2>Contact Us</h2>
+                <address>
+                    <strong>Start Bootstrap</strong>
+                    <br>3481 Melrose Place
+                    <br>Beverly Hills, CA 90210
+                    <br>
+                </address>
+                <address>
+                    <abbr title="Phone">P:</abbr>(123) 456-7890
+                    <br>
+                    <abbr title="Email">E:</abbr> <a href="mailto:#">name@example.com</a>
+                </address>
+            </div> -->
+        </div>
+        <!-- /.row -->
+
+        <hr>
+
+        <div class="row">
+
+            <div class="col-sm-4">
+                <!--<img class="img-circle img-responsive img-center" src="http://placehold.it/300x300" alt=""> -->
+                <h2>Cost &amp; Convenience</h2>
+                <div class="why_us">
+                <p>Using our service, the costs can be lower than a dish at a restaurant or takeout on a per meal basis, even with the best and fresh ingredients.  Also you may accrue savings from:</p>
+                <ul>
+                    <li>Reduced wastage of unused grocery.</li>
+                    <li>Reduced trips getting food.</li>
+                    <li>Opportunity cost of time – from grocery shopping to cooking and cleaning.</li>
+                </ul>
+                <p>Our service allows you to gainfully redeploy your time, whether it is earning higher income doing what you do best, reading to your child, gardening, visiting your friends or family, travel, etc.</p>
+                <p>After a few clicks, you can relax and leave the rest of the food preparation to us.  We will do the grocery shopping, cooking, cleaning and even put the food in storage containers and/or serve on the table. You would have freed a whole bunch of time you would otherwise not have had, and time is money.  </p>
+                <p>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <!--<img class="img-circle img-responsive img-center" src="http://placehold.it/300x300" alt="">-->
+                <h2>Health &amp; Hygiene</h2>
+                <div class="why_us">
+                <p>These are two important factors in food preparation, transportation, storage and consumption.  Health of a person is directly proportional to the food they eat.  
+Using our service, you will be able to reduce a plethora of issues related to the current health crisis sweeping the nation.  </p>
+
+<p>Avoiding too much sugar, salt, oil and fat is the key to staying a healthier life.  What better way to ensure you are eating right than to use our service where you know what you are getting &amp; how it is prepared.  You get to eliminate most of the chemicals used to preserve prepackaged food and ensure the ingredients are washed and cleaned thoroughly before cooking.  Say goodbye to elevated risks of cancer, heart disease and a slew of other complications from unwanted food contaminants.  See a few of the links below that underlines the importance of what we stand for: </p>
+
+<a href="https://www.youtube.com/watch?v=6n29ZIJ-jQA">Is Sugar Toxic - 60 Minutes Investigates</a>
+</br>
+<a href="https://www.youtube.com/watch?v=-8eQ_8Jogcw">The Secrets Of Sugar - Science Channel National Geographic</a>
+</br>
+<a href="http://www.usatoday.com/story/money/business/2015/01/24/taco-bell-reduces-salt-in-quiet-campaign/22259207/">Taco Bell reduces salt in quiet campaign</a>
+</br>
+<a href="http://www.cnn.com/2014/02/10/health/chemical-food-additives/">CNN - 7 other chemicals in your food
+</a>
+</div>
+            </div>
+            <div class="col-sm-4">
+               <!-- <img class="img-circle img-responsive img-center" src="http://placehold.it/300x300" alt=""> -->
+                <h2>Taste and Temptation</h2>
+                <div class="why_us">
+                <p>Our service will allow you to select from a wide variety of meals offered that will be prepared to your taste.  You will get to alter the way it is prepared if you have any special needs, such as lower salt, spices, etc.  Just have to communicate that to the chef at the time of service.</p>
+
+                <p>When you desire an authentic ethnic preparation but do not know how to do it yourself, let us know, we will hook you with a chef to satisfy that desire.  You could do it for a special evening or for a special gathering of your friends and family.</p>
+                </div>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <hr>
+    </div>
+    <!-- /.container -->
+
+    <%= render 'shared/footer' %>
+
+
+
+<style>
+.overlay-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.1;
+  background: rgba(0, 0, 0, 0.5);
+  background: -webkit-radial-gradient(50% 55%, ellipse closest-corner, rgba(0, 0, 0, 0.57) 1%, rgba(0, 0, 0, 0.8) 100%);
+  background: -moz-radial-gradient(50% 55%, ellipse closest-corner, rgba(0, 0, 0, 0.57) 1%, rgba(0, 0, 0, 0.8) 100%);
+  background: -ms-radial-gradient(50% 55%, ellipse closest-corner, rgba(0, 0, 0, 0.57) 1%, rgba(0, 0, 0, 0.8) 100%);
+  background: radial-gradient(50% 55%, ellipse closest-corner, rgba(0, 0, 0, 0.57) 1%, rgba(0, 0, 0, 0.8) 100%);
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  z-index: 0;
+}
+.overlay-bg.black {
+  opacity: 0.5;
+}
+.overlay-bg.light {
+  background-image: -webkit-linear-gradient(top, rgba(243, 243, 243, 0.95) 80%, rgba(243, 243, 243, 0.85) 100%);
+  background-image: linear-gradient(to bottom, rgba(243, 243, 243, 0.95) 80%, rgba(243, 243, 243, 0.85) 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f2f3f3f3', endColorstr='#d9f3f3f3', GradientType=0);
+}
+.ie9 .overlay-bg,
+.ie8 .overlay-bg {
+  background: url("/assets/ie-overlay.png");
+}
+
+</style>

@@ -355,17 +355,6 @@ ul.unstyled {
 	height: 240px;
 }
 
-/* About page banner */
-
-.business-header {
-    height: 300px;
-    background: url('/assets/buffet.jpg') center center no-repeat scroll;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
-}
-
 /* for products page */
 
 .food_info {
@@ -499,3 +488,6 @@ ul.unstyled {
 	color: #ff7800
 }
 
+.why_us {
+	background-color: lightgray;
+}
