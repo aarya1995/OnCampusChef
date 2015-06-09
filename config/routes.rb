@@ -3,6 +3,7 @@ Oncampuschef::Application.routes.draw do
   devise_for :customers, :controllers => { :omniauth_callbacks => "customers/omniauth_callbacks" }
 
   get "static_pages/why_us"
+  get "static_pages/pricing"
 
 
   resources :charges, :except => [:show]

@@ -40,8 +40,11 @@ class ChargesController < ApplicationController
       end
 
       @items = @recent_order.food_items
-     
 
+      # Add sales tax #
+
+      @afterTax = (@finalCost * 0.06) + @finalCost #this is the final cost
+     
     end
 
     def create
@@ -84,6 +87,10 @@ class ChargesController < ApplicationController
       end
 
       # end calculation #
+
+      # Add sales tax #
+
+      @afterTax = (@finalCost * 0.06) + @finalCost #this is the final cost
         
         # Get the credit card details submitted by the form
         token = params[:stripeToken]
@@ -91,16 +98,17 @@ class ChargesController < ApplicationController
         # Create the charge on Stripe's servers - this will charge the user's card
         begin
         charge = Stripe::Charge.create(
-            :amount => @finalCost, # amount in cents, again
+            :amount => @afterTax.to_i, # amount in cents, again
             :currency => "usd",
             :source => token,
-            :description => "Example charge"
+            :description => "Real charge"
         )
 
         if charge != nil
             if @recent_order != nil    
                 if charge["paid"] then @recent_order.status = "paid" end
                 @recent_order.save
+                flash[:success] = "Order placed!"
                 redirect_to "/profile"
             else
                 raise "Something got fucked up with the order"

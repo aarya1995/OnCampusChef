@@ -41,7 +41,11 @@ body {
 					<%= form_tag charges_path do %>
 					  <article style="margin-top: 5%;">
 					    <label class="amount">
-					      <span><h3>Amount: $<%="#{'%.02f' %(@finalCost.to_f / 100)}"%></h3></span>
+					      <span><p>Amount: $<%="#{'%.02f' %(@finalCost.to_f / 100)}"%></p></span>
+					      <span><p>+ 6.0% sales tax </p></span>
+					      <hr>
+					      <span><h3>Final Cost: $<%="#{'%.02f' %(@afterTax / 100)}"%></h3></span>
+
 					    </label>
 					  </article>
 
@@ -50,7 +54,7 @@ body {
 					  		  data-name="WeCook"
 					          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
 					          data-description="Your Kitchen, Our Chef"
-					          data-amount="<%=@finalCost%>"></script>
+					          data-amount="<%= @afterTax %>"></script>
 					<% end %>
 
 				<% else %>

@@ -74,8 +74,8 @@ class OrdersController < ApplicationController
 		# end error check #
 
 		respond_to do |format|
-			if @howMany != @amount
-				flash[:error] = "Error: Must Order #{ @howMany } Meals!"
+			if @amount <= 0 || @amount > @howMany
+				flash[:error] = "Error: Must Order Up To #{ @howMany } Meals!"
 				format.html { render action: 'new' }
 			else
 				if @new_order.save
