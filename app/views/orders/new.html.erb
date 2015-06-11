@@ -117,6 +117,21 @@
                         <span class="input-group-addon" id="basic-addon1">Phone</span>
                         <input type="text" class="form-control required" placeholder="555-555-5555" aria-describedby="basic-addon1" name="contact_info" data-parsley-group="block3" required>
                         </div>
+                </div>
+            </div>
+    </fieldset>
+    
+    <!-- optional step for promo code -->
+    <h3>Promo Code</h3>
+    <fieldset>
+        <legend class="ms-legend">Enter an optional promo code to receive a 10% discount!</legend>
+        <div class="row shit">
+                <div class="col-md-10" style="margin-left: 3%;">
+                        <h3 class="fs-subtitle" style="margin-bottom: 4%;">Enter optional promo code</h3>
+                        <div class="input-group">
+                        <span class="input-group-addon" id="basic-addon1">Promo code: </span>
+                        <input type="text" class="form-control" placeholder="" aria-describedby="basic-addon1" name="promocode" />
+                        </div>
 
                         <input style="margin-top: 5%;" type="submit" class="btn btn-info submit" />
                 </div>
@@ -143,7 +158,7 @@ form.steps({
             return true;
         }
         // Forbid next action on "Warning" step if the user is to young
-        if (newIndex === 3 && Number($("#age-2").val()) < 18)
+        if (newIndex === 4 && Number($("#age-2").val()) < 18)
         {
             return false;
         }
@@ -160,7 +175,7 @@ form.steps({
     onStepChanged: function (event, currentIndex, priorIndex)
     {
         // Used to skip the "Warning" step if the user is old enough.
-        if (currentIndex === 2 && Number($("#age-2").val()) >= 18)
+        if (currentIndex === 4 && Number($("#age-2").val()) >= 18)
         {
             form.steps("next");
         }

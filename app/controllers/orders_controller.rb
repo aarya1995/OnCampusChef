@@ -27,7 +27,7 @@ class OrdersController < ApplicationController
 		elsif @quantity.to_i == 14 || @quantity.to_i == 16
 			@howMany = 4
 		else
-			@howMany = 5
+			@howMany = 5 # this shouldn't be the default case
 		end
 
 		@food_items = FoodObject.all
@@ -53,6 +53,8 @@ class OrdersController < ApplicationController
 				@new_order.appointment_date = v
 			elsif k == "grocery_date"
 				@new_order.grocery_date = v
+			elsif k == "promocode"
+				@new_order.promo_code = v
 			end
 		}
 

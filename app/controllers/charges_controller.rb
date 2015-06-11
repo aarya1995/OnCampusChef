@@ -41,9 +41,17 @@ class ChargesController < ApplicationController
 
       @items = @recent_order.food_items
 
-      # Add sales tax #
+      # Apply promo code
 
-      @afterTax = (@finalCost * 0.06) + @finalCost #this is the final cost
+      if @recent_order.promo_code == "WeCook2015"
+        @discountedPrice = @finalCost - (@finalCost * 0.10)
+
+        # Add sales tax # 
+        @afterTax = (@discountedPrice * 0.06) + @discountedPrice #this is the final cost
+      else 
+        @afterTax = (@finalCost * 0.06) + @finalCost #this is the final cost
+      end
+
      
     end
 
@@ -88,9 +96,15 @@ class ChargesController < ApplicationController
 
       # end calculation #
 
-      # Add sales tax #
+       # Apply promo code
+      if @recent_order.promo_code == "WeCook2015"
+        @discountedPrice = @finalCost - (@finalCost * 0.10)
 
-      @afterTax = (@finalCost * 0.06) + @finalCost #this is the final cost
+        # Add sales tax # 
+        @afterTax = (@discountedPrice * 0.06) + @discountedPrice #this is the final cost
+      else 
+        @afterTax = (@finalCost * 0.06) + @finalCost #this is the final cost
+      end
         
         # Get the credit card details submitted by the form
         token = params[:stripeToken]
