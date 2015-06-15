@@ -18,11 +18,7 @@ class OrdersController < ApplicationController
 		@order.save
 
 		#determine how many meals the customer can select
-		if @quantity.to_i == 1 || @quantity.to_i == 2
-			@howMany = 1
-		elsif @quantity.to_i == 4 || @quantity.to_i == 6
-			@howMany = 2
-		elsif @quantity.to_i == 8 || @quantity.to_i == 10 || @quantity.to_i == 12
+		if @quantity.to_i == 8 || @quantity.to_i == 10 || @quantity.to_i == 12
 			@howMany = 3
 		elsif @quantity.to_i == 14 || @quantity.to_i == 16
 			@howMany = 4
@@ -61,11 +57,7 @@ class OrdersController < ApplicationController
 		#@new_order.customer_id = current_customer.id
 
 		# error checking #
-		if @new_order.num_meals.to_i == 1 || @new_order.num_meals.to_i == 2
-			@howMany = 1
-		elsif @new_order.num_meals.to_i == 4 || @new_order.num_meals.to_i == 6
-			@howMany = 2
-		elsif @new_order.num_meals.to_i == 8 || @new_order.num_meals.to_i == 10 || @new_order.num_meals.to_i == 12
+		if @new_order.num_meals.to_i == 8 || @new_order.num_meals.to_i == 10 || @new_order.num_meals.to_i == 12
 			@howMany = 3
 		elsif @new_order.num_meals.to_i == 14 || @new_order.num_meals.to_i == 16
 			@howMany = 4

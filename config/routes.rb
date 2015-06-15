@@ -4,6 +4,7 @@ Oncampuschef::Application.routes.draw do
 
   get "static_pages/why_us"
   get "static_pages/pricing"
+  get "static_pages/what_we_do"
 
 
   resources :charges, :except => [:show]

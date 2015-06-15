@@ -7,36 +7,33 @@ class ChargesController < ApplicationController
       
       @numMeals = @recent_order.num_meals
 
-      if @numMeals.to_i == 2
-        @finalCost = 7455
-      elsif @numMeals.to_i == 4
-        @finalCost = 9275
-      elsif @numMeals.to_i == 6
-        @finalCost = 9695
-      elsif @numMeals.to_i == 8
-        @finalCost = 12075
+    
+      if @numMeals.to_i == 8
+        @finalCost = 10264
       elsif @numMeals.to_i == 10
-        @finalCost = 12600
+        @finalCost = 12570
       elsif @numMeals.to_i == 12
-        @finalCost = 13125
+        @finalCost = 14772
       elsif @numMeals.to_i == 14
-        @finalCost = 16450
+        @finalCost = 16870
       elsif @numMeals.to_i == 16
-        @finalCost = 16975
+        @finalCost = 18864
       elsif @numMeals.to_i == 18
-        @finalCost = 19775
+        @finalCost = 20754
       elsif @numMeals.to_i == 20
-        @finalCost = 20300
+        @finalCost = 22540
       elsif @numMeals.to_i == 22
-        @finalCost = 23100
+        @finalCost = 24222
       elsif @numMeals.to_i == 24
-        @finalCost = 23625
+        @finalCost = 25800
       elsif @numMeals.to_i == 26
-        @finalCost = 26425
+        @finalCost = 27274
       elsif @numMeals.to_i == 28
-        @finalCost = 26950
+        @finalCost = 28644
       elsif @numMeals.to_i == 30
-        @finalCost = 29750
+        @finalCost = 29910
+      elsif @numMeals.to_i == 40
+        @finalCost = 39560
       end
 
       @items = @recent_order.food_items
@@ -45,7 +42,6 @@ class ChargesController < ApplicationController
 
       if @recent_order.promo_code == "WeCook2015"
         @discountedPrice = @finalCost - (@finalCost * 0.10)
-
         # Add sales tax # 
         @afterTax = (@discountedPrice * 0.06) + @discountedPrice #this is the final cost
       else 
@@ -62,36 +58,32 @@ class ChargesController < ApplicationController
       
       @numMeals = @recent_order.num_meals
 
-      if @numMeals.to_i == 2
-        @finalCost = 7455
-      elsif @numMeals.to_i == 4
-        @finalCost = 9275
-      elsif @numMeals.to_i == 6
-        @finalCost = 9695
-      elsif @numMeals.to_i == 8
-        @finalCost = 12075
+      if @numMeals.to_i == 8
+        @finalCost = 10264
       elsif @numMeals.to_i == 10
-        @finalCost = 12600
+        @finalCost = 12570
       elsif @numMeals.to_i == 12
-        @finalCost = 13125
+        @finalCost = 14772
       elsif @numMeals.to_i == 14
-        @finalCost = 16450
+        @finalCost = 16870
       elsif @numMeals.to_i == 16
-        @finalCost = 16975
+        @finalCost = 18864
       elsif @numMeals.to_i == 18
-        @finalCost = 19775
+        @finalCost = 20754
       elsif @numMeals.to_i == 20
-        @finalCost = 20300
+        @finalCost = 22540
       elsif @numMeals.to_i == 22
-        @finalCost = 23100
+        @finalCost = 24222
       elsif @numMeals.to_i == 24
-        @finalCost = 23625
+        @finalCost = 25800
       elsif @numMeals.to_i == 26
-        @finalCost = 26425
+        @finalCost = 27274
       elsif @numMeals.to_i == 28
-        @finalCost = 26950
+        @finalCost = 28644
       elsif @numMeals.to_i == 30
-        @finalCost = 29750
+        @finalCost = 29910
+      elsif @numMeals.to_i == 40
+        @finalCost = 39560
       end
 
       # end calculation #

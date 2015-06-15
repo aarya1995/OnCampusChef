@@ -1,6 +1,12 @@
 <% provide(:title, 'Pricing') %>
 <%= render 'shared/header' %>
 
+<style>
+	body {
+		background-color: #FDFDFD;
+	}
+</style>
+
 <div class="container" style="margin-bottom: 3%;">
 <div class="row" style="margin-top: 3%;">
 	<div class="col-md-4"></div>
@@ -24,40 +30,38 @@
 			<div class="col-md-8">
 			<h2 class="text-center">Number of Meals: </h2>
 			<p class="text-center" style="margin-bottom: 5%;">Cost is dependent on total number of meals. Drag the slider to increase the number of total meals.</p>
-			<input id="ex6" type="text" data-slider-min="6" data-slider-max="30" data-slider-step="2" data-slider-value="6"/&t
+			<input id="ex6" type="text" data-slider-min="8" data-slider-max="30" data-slider-step="2" data-slider-value="8"/&t
 
-			<span id="ex6CurrentSliderValLabel"><h2 class="text-center">Price: <span id="ex6SliderVal">$16.16</span> per meal</h2></span>
+			<span id="ex6CurrentSliderValLabel"><h2 class="text-center">Price: <span id="ex6SliderVal">$102.64</span></h2></span>
 
 			<script>
 				// With JQuery
 				$("#ex6").slider();
 				$("#ex6").on("slide", function(slideEvt) {
-					if (slideEvt.value == 6) {
-						$("#ex6SliderVal").text("$16.16");
-					} else if (slideEvt.value == 8) {
-						$("#ex6SliderVal").text("$15.09");
+					if (slideEvt.value == 8) {
+						$("#ex6SliderVal").text("$102.64");
 					} else if (slideEvt.value == 10) {
-						$("#ex6SliderVal").text("$12.6");
+						$("#ex6SliderVal").text("$125.70");
 					} else if (slideEvt.value == 12) {
-						$("#ex6SliderVal").text("$10.94");
+						$("#ex6SliderVal").text("$147.72");
 					} else if (slideEvt.value == 14) {
-						$("#ex6SliderVal").text("$11.75");
+						$("#ex6SliderVal").text("$168.70");
 					} else if (slideEvt.value == 16) {
-						$("#ex6SliderVal").text("$10.61");
+						$("#ex6SliderVal").text("$188.64");
 					} else if (slideEvt.value == 18) {
-						$("#ex6SliderVal").text("$10.99");
+						$("#ex6SliderVal").text("$207.54");
 					} else if (slideEvt.value == 20) {
-						$("#ex6SliderVal").text("$10.15");
+						$("#ex6SliderVal").text("$225.40");
 					} else if (slideEvt.value == 22) {
-						$("#ex6SliderVal").text("$10.5");
+						$("#ex6SliderVal").text("$242.22");
 					} else if (slideEvt.value == 24) {
-						$("#ex6SliderVal").text("$9.84");
+						$("#ex6SliderVal").text("$258.00");
 					} else if (slideEvt.value == 26) {
-						$("#ex6SliderVal").text("$10.16");
+						$("#ex6SliderVal").text("$272.74");
 					} else if (slideEvt.value == 28) {
-						$("#ex6SliderVal").text("$9.63");
+						$("#ex6SliderVal").text("$286.44");
 					} else if (slideEvt.value == 30) {
-						$("#ex6SliderVal").text("$9.92");
+						$("#ex6SliderVal").text("$299.10");
 					}
 				});
 			</script>
