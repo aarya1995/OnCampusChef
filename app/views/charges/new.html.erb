@@ -42,8 +42,8 @@ body {
 					  <article style="margin-top: 5%;">
 					    <label class="amount">
 					      <span><p>Amount: $<%="#{'%.02f' %(@finalCost.to_f / 100)}"%></p></span>
-					      <% if rec_order.promo_code == "WeCook2015" %>
-					      	<span><p>10% discount applied!</p></span>
+					      <% if rec_order.promo_code == "healthy123" %>
+					      	<span><p>30% discount applied!</p></span>
 					      	<span><p>+ 6.0% sales tax </p></span>
 					      	<hr>
 					      	<span><h3>Final Cost: $<%="#{'%.02f' %(@afterTax / 100)}"%></h3></span>
