@@ -19,7 +19,7 @@
 </div>
 
 <div class="row" style="margin-top: 3%;">
-	<p>
+	<p class="text-center">
 	WeCook is an affordable lifestyle choice. We aim to provide a service that can be used regularly so that anyone can eat healthy, delicious, homemade meals on a daily basis made by your very own personal chef. The more meals you order in an appointment, the less the price is per meal. Find people to order in a group and watch as you are magically spending less than $9 a meal for your very own personal chef!</p>
 
 
@@ -32,7 +32,10 @@
 			<p class="text-center" style="margin-bottom: 5%;">Cost is dependent on total number of meals. Drag the slider to increase the number of total meals.</p>
 			<input id="ex6" type="text" data-slider-min="8" data-slider-max="30" data-slider-step="2" data-slider-value="8"/&t
 
-			<span id="ex6CurrentSliderValLabel"><h2 class="text-center">Price: <span id="ex6SliderVal">$102.64</span></h2></span>
+			<span id="ex6CurrentSliderValLabel"><h2 class="text-center">Total Cost: <span id="ex6SliderVal">$102.64</span></h2></span>
+			<span id="ex6CurrentSliderValLabel"><h2 class="text-center">Price per meal: <span id="ex6SliderVal2">$12.83</span></h2></span>
+
+			<h2 class="text-center" style="margin-top: 4%;">For two weeks we are giving you 30% off on all of our orders over 8 meals. Apply the discount to the prices shown above</h2>
 
 			<script>
 				// With JQuery
@@ -40,28 +43,40 @@
 				$("#ex6").on("slide", function(slideEvt) {
 					if (slideEvt.value == 8) {
 						$("#ex6SliderVal").text("$102.64");
+						$("#ex6SliderVal2").text("$12.83");
 					} else if (slideEvt.value == 10) {
 						$("#ex6SliderVal").text("$125.70");
+						$("#ex6SliderVal2").text("$12.57");
 					} else if (slideEvt.value == 12) {
 						$("#ex6SliderVal").text("$147.72");
+						$("#ex6SliderVal2").text("$12.31");
 					} else if (slideEvt.value == 14) {
 						$("#ex6SliderVal").text("$168.70");
+						$("#ex6SliderVal2").text("$12.05");
 					} else if (slideEvt.value == 16) {
 						$("#ex6SliderVal").text("$188.64");
+						$("#ex6SliderVal2").text("$11.79");
 					} else if (slideEvt.value == 18) {
 						$("#ex6SliderVal").text("$207.54");
+						$("#ex6SliderVal2").text("$11.53");
 					} else if (slideEvt.value == 20) {
 						$("#ex6SliderVal").text("$225.40");
+						$("#ex6SliderVal2").text("$11.27");
 					} else if (slideEvt.value == 22) {
 						$("#ex6SliderVal").text("$242.22");
+						$("#ex6SliderVal2").text("$11.01");
 					} else if (slideEvt.value == 24) {
 						$("#ex6SliderVal").text("$258.00");
+						$("#ex6SliderVal2").text("$10.75");
 					} else if (slideEvt.value == 26) {
 						$("#ex6SliderVal").text("$272.74");
+						$("#ex6SliderVal2").text("$10.49");
 					} else if (slideEvt.value == 28) {
 						$("#ex6SliderVal").text("$286.44");
+						$("#ex6SliderVal2").text("$10.23");
 					} else if (slideEvt.value == 30) {
 						$("#ex6SliderVal").text("$299.10");
+						$("#ex6SliderVal2").text("$9.97");
 					}
 				});
 			</script>
