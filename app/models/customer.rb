@@ -8,6 +8,7 @@ class Customer < ActiveRecord::Base
   validates :customername, presence: true
 
   has_many :orders
+  has_many :customers
 
   has_many :pins, :dependent => :destroy
 

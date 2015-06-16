@@ -40,8 +40,8 @@ class ChargesController < ApplicationController
 
       # Apply promo code
 
-      if @recent_order.promo_code == "WeCook2015"
-        @discountedPrice = @finalCost - (@finalCost * 0.10)
+      if @recent_order.promo_code == "healthy123" && @recent_order.num_meals > 8
+        @discountedPrice = @finalCost - (@finalCost * 0.30)
         # Add sales tax # 
         @afterTax = (@discountedPrice * 0.06) + @discountedPrice #this is the final cost
       else 
@@ -89,8 +89,8 @@ class ChargesController < ApplicationController
       # end calculation #
 
        # Apply promo code
-      if @recent_order.promo_code == "WeCook2015"
-        @discountedPrice = @finalCost - (@finalCost * 0.10)
+      if @recent_order.promo_code == "healthy123" && @recent_order.num_meals > 8
+        @discountedPrice = @finalCost - (@finalCost * 0.30)
 
         # Add sales tax # 
         @afterTax = (@discountedPrice * 0.06) + @discountedPrice #this is the final cost

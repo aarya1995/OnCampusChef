@@ -1,0 +1,2 @@
+module BarbecueHelper
+end

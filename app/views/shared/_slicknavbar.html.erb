@@ -19,6 +19,7 @@
             </div>
             <div class="navbar-collapse collapse">
               <ul class="nav navbar-nav pull-right">
+                <li class=""><a href="/food_objects/menu">Menu</a></li>
                 <% if signed_in? %>
 
                   <li class="dropdown">
@@ -29,12 +30,12 @@
                       </ul>
                     </li>
                 <% else %>
-                 <li><%= link_to('Sign Up', new_customer_registration_path) %></li>
+                 <li><%= link_to('Login', new_customer_session_path) %></li>
                 <% end %>
-                <li class=""><a href="/food_objects/menu">Menu</a></li>
                 <li class=""><a href="/static_pages/why_us">Why Us</a></li>
                 <li><a href = "/static_pages/what_we_do">What We Do</a></li>
                 <li><a href = "/static_pages/pricing">Pricing</a></li>
+                <!--<li><a href = "/barbecue/bbq">BBQ Plan</a></li>-->
               </ul>
             </div>
           </div>

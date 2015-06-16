@@ -9,6 +9,7 @@ Oncampuschef::Application.routes.draw do
 
   resources :charges, :except => [:show]
   resources :orders, :except => [:show]
+  resources :barbecue, :except => [:show]
 
  
   get "orders/vegetarian" => "orders#vegetarian"
@@ -18,6 +19,9 @@ Oncampuschef::Application.routes.draw do
   get "orders/quantity" => "orders#quantity"
   post "orders/new" => "orders#new"
 
+  #barbecue routes
+  #get "barbecue/bbq" => "barbecue#bbq"
+
 
   get "food_objects/menu"
  
@@ -26,6 +30,7 @@ Oncampuschef::Application.routes.draw do
   match '/catering', to: 'catering_orders#new', via: 'get'
 
   get 'pages/index' => 'high_voltage/pages#show', id: 'index'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
