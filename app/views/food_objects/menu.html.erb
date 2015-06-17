@@ -2,18 +2,13 @@
 <%= render 'shared/header' %>
 
 <div class="container menu-container">
-	<% @food.each_slice(3) do |food| %>
-	  <div class="row">
-	    <% food.each do |food| %>
-	      <div class="col-md-4 food_info">
-
-	      	<img src="<%= food.imageurl %>" />
-	      	<p style="font-weight: bold;"><%= food.name %></p>
-	      	<p><%= food.description %></p>
-
-	      </div>
-	    <% end %>
-	  </div>
+	<h1 class="text-center">Menu</h1>
+	<hr style="border-top: 1px solid #3D3D3D; width: 150px;">
+	<% @food.each do |food| %>
+	<div class="row">
+		<h3 class="text-center"><%= food.name %></h3>
+		<p class="text-center"><%= food.description %></p>
+	</div>
 	<% end %>
 </div>
 
@@ -26,3 +21,10 @@
 
 
 <%= render 'shared/footer' %>
+
+<style>
+body {
+	font-family: sans-serif;
+}
+
+</style>
