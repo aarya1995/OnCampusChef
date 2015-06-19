@@ -5,12 +5,14 @@ Oncampuschef::Application.routes.draw do
   get "static_pages/why_us"
   get "static_pages/pricing"
   get "static_pages/what_we_do"
-  #get "static_pages/bbq"
+  get "static_pages/bbq"
 
 
   resources :charges, :except => [:show]
   resources :orders, :except => [:show]
-  #resources :barbecue, :except => [:show]
+  resources :barbecue_orders, :except => [:show]
+  resources :barbecue_charges, :except => [:show]
+
 
  
   get "orders/vegetarian" => "orders#vegetarian"
@@ -19,6 +21,10 @@ Oncampuschef::Application.routes.draw do
   get "orders/test2" => "orders#test2"
   get "orders/quantity" => "orders#quantity"
   post "orders/new" => "orders#new"
+
+  #barbecue routes
+  get "barbecue_orders/new"
+
 
   get "food_objects/menu"
  

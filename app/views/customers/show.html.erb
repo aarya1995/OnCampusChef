@@ -23,7 +23,7 @@
 		<a href= "/food_objects/menu" class="btn btn-lg btn-primary">Order Now</a>
 	</div>
 	
-	<% if @orders.length != 0 %>
+	<% if @orders.length != 0 || @bbqOrders.length != 0 %>
 		<div class="row">
 			<h2>Order History: </h2>
 			<% @orders.each do |order| %>
@@ -49,6 +49,18 @@
 				<p style="font-weight: bold; display: inline;">, Chef appointment date</p>: <%= order.appointment_date %>
 				<hr style="border-top: 1px solid #3D3D3D;">
 			  </div>
+			<% end %>
+			<% end %>
+			<!-- bbq Orders -->
+			<% @bbqOrders.each do |bbqOrder| %>
+			<% if bbqOrder.status == "paid" %>
+				<div class="order-history-object">
+					<p style="font-weight: bold; display: inline;">BBQ Package #</p>: <%= bbqOrder.package_number %>
+					</br>
+					<p style="font-weight: bold; display: inline;">Grocery delivery date</p>: <%= bbqOrder.grocery_date %>
+					<p style="font-weight: bold; display: inline;">, Chef appointment date</p>: <%= bbqOrder.appointment_date %>
+					<hr style="border-top: 1px solid #3D3D3D;">
+				</div>
 			<% end %>
 			<% end %>
 		</div>

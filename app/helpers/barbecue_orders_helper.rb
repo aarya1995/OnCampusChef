@@ -1,0 +1,2 @@
+module BarbecueOrdersHelper
+end
