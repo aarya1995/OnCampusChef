@@ -21,7 +21,11 @@ body {
 			<!-- review order details -->
 			<h1>Review your order: </h1>
 			<ul>
-				<li><p style="font-weight: bold; display: inline;">Package #</p>: <%= rec_order.package_number %></li>
+				<li><p style="font-weight: bold; display: inline;">BBQ Package #</p>: <%= rec_order.package_number %></li>
+				<li><p style="font-weight: bold; display: inline;">Add On items ordered</p>: 
+					<% rec_order.add_ons.each do |addon| %>
+						<p style="display: inline;"><%= addon %> </p>
+				<% end %></li>
 				<li><p style="font-weight: bold; display: inline;">Grocery Delivery</p>: <%= rec_order.grocery_date %></li>
 				<li><p style="font-weight: bold; display: inline;">Chef Appointment</p>: <%= rec_order.appointment_date %></li>
 				<li><p style="font-weight: bold; display: inline;">Address</p>: <%= rec_order.address %></li>
@@ -36,7 +40,8 @@ body {
 					<%= form_tag barbecue_charges_path do %>
 					  <article style="margin-top: 5%;">
 					    <label class="amount">
-					      <span><p>Amount: $<%="#{'%.02f' %(@finalCost.to_f / 100)}"%></p></span>
+					      <span><p>Cost of BBQ: $<%="#{'%.02f' %(@finalCost.to_f / 100)}"%></p></span>
+					      <span><p>Cost of addons: $<%="#{'%.02f' %(@addonCost.to_f / 100)}"%></p></span>
 						  <span><p>+ 6.0% sales tax </p></span>
 						  <hr>
 						  <span><h3>Final Cost: $<%="#{'%.02f' %(@afterTax / 100)}"%></h3></span>

@@ -24,6 +24,16 @@ class BarbecueOrdersController < ApplicationController
 				@bbqOrder.appointment_date = v
 			elsif k == "grocery_date"
 				@bbqOrder.grocery_date = v
+			elsif k == "shrimp_addon" && v != "null"
+				@bbqOrder.add_ons.push(v)
+			elsif k == "beef_addon" && v != "null"
+				@bbqOrder.add_ons.push(v)
+			elsif k == "lamb_addon" && v != "null"
+				@bbqOrder.add_ons.push(v)
+			elsif k == "meatball_addon" && v != "null"
+				@bbqOrder.add_ons.push(v)
+			elsif k == "burger_addon" && v != "null"
+				@bbqOrder.add_ons.push(v)
 			end
 		}
 

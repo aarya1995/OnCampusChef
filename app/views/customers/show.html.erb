@@ -57,6 +57,13 @@
 				<div class="order-history-object">
 					<p style="font-weight: bold; display: inline;">BBQ Package #</p>: <%= bbqOrder.package_number %>
 					</br>
+					<% if bbqOrder.add_ons.length != 0 %>
+					<p style="font-weight: bold; display: inline;">Add On items ordered</p>: 
+						<% bbqOrder.add_ons.each do |addon| %>
+							<p style="display: inline;"><%= addon %> </p>
+						<% end %>
+					</br>
+					<% end %>
 					<p style="font-weight: bold; display: inline;">Grocery delivery date</p>: <%= bbqOrder.grocery_date %>
 					<p style="font-weight: bold; display: inline;">, Chef appointment date</p>: <%= bbqOrder.appointment_date %>
 					<hr style="border-top: 1px solid #3D3D3D;">
