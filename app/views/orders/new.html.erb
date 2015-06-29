@@ -61,8 +61,8 @@
         <legend class="ms-legend-2">Select a date and time that you will be available</legend>
                     
                     <div class="col-md-8" style="margin-top: 5%;">
-                        <h4>*please schedule chef appointment 48 hours in advance</h4>
-                        <h3 class="fs-title">Pick a time for your chef appointment</h3>
+                        <h4>*please schedule chef appointment 3 days in advance</h4>
+                        <h3 class="fs-title">Pick a time for your chef appointment, our hours of operation are from 9 AM - 10 PM</h3>
                         <div class="form-group" style="margin-top: 3%;">
                             <div class='input-group date' id='datetimepicker2'>
                             <input type="text" class="form-control required" name="chef_date" required />
@@ -74,8 +74,8 @@
                     </div>
                     
                     <div class="col-md-8">
-                        <h4>*please schedule your grocery delivery up to 24 hours before the chef appointment</h4>
-                        <h3 class="fs-title">Pick a time that you want your groceries delivered</h3>
+                        <h4>*please schedule your grocery delivery up to 24 hours before the chef appointment -- note that PeaPod will deliver your groceries within a two hour timeframe from the time you select.</h4>
+                        <h3 class="fs-title">Pick a time that you want your groceries delivered. We deliver from 7 AM - 10 PM</h3>
                         <div class="form-group" style="margin-top: 3%;">
                             <div class='input-group date' id='datetimepicker1'>
                             <input type="text" class="form-control required" name="grocery_date" required />
@@ -101,7 +101,21 @@
                 </script>
         </div>
     </fieldset>
- 
+    
+    <h3>Food Restrictions</h3>
+    <fieldset>
+        <div class="row" style="margin-top: 1%;">
+        <legend class="ms-legend-2">Optionally specify any food restrictions</legend>
+                    
+                    <div class="col-md-8" style="margin-top: 5%;">
+                        <h3 class="fs-title">If you have any food allergies or diet restrictions, please note them in the box below: </h3>
+                        <textarea style="margin-top: 3%;" name="food_restrictions" rows="5" cols="50">
+                            
+                        </textarea>
+                    </div>                 
+        </div>
+    </fieldset>
+
     <h3>Contact</h3>
     <fieldset>
         <legend class="ms-legend">Enter your phone number and address</legend>
@@ -124,10 +138,10 @@
     <!-- optional step for promo code -->
     <h3>Promo Code</h3>
     <fieldset>
-        <legend class="ms-legend">Enter an optional promo code to receive a 30% discount!</legend>
+        <legend class="ms-legend">Enter an optional promo code to receive a 10% discount!</legend>
         <div class="row shit">
                 <div class="col-md-10" style="margin-left: 3%;">
-                        <h3 class="fs-subtitle" style="margin-bottom: 4%;">If you're ordering more than 8 meals, enter the promo code: healthy123 to receive a 30% discount</h3>
+                        <h3 class="fs-subtitle" style="margin-bottom: 4%;">If you're ordering more than 8 meals, enter the promo code: healthy123 to receive a 10% discount</h3>
                         <div class="input-group">
                         <span class="input-group-addon" id="basic-addon1">Promo code: </span>
                         <input type="text" class="form-control" placeholder="" aria-describedby="basic-addon1" name="promocode" />

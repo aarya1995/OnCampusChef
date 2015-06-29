@@ -34,6 +34,8 @@ class BarbecueOrdersController < ApplicationController
 				@bbqOrder.add_ons.push(v)
 			elsif k == "burger_addon" && v != "null"
 				@bbqOrder.add_ons.push(v)
+			elsif k == "food_restrictions"
+				@bbqOrder.food_restrictions = v
 			end
 		}
 

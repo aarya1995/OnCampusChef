@@ -51,6 +51,8 @@ class OrdersController < ApplicationController
 				@new_order.grocery_date = v
 			elsif k == "promocode"
 				@new_order.promo_code = v
+			elsif k == "food_restrictions"
+				@new_order.food_restrictions = v
 			end
 		}
 
